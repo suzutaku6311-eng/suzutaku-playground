@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 import { games } from '../data/games';
 import { GameCard } from '../components/GameCard';
@@ -19,13 +19,15 @@ export const GamesPage: React.FC = () => {
 
   return (
     <div className="container games-page animate-fade-in">
-      <div className="page-header">
-        <h1 className="page-title">{t('nav.games')}</h1>
-        <p className="games-subtitle">All Japan Science Fun</p>
-      </div>
-
-      {/* Category line */}
-      <p className="games-categories">All Japan Science Fun</p>
+        <div className="page-header">
+          <h1 className="page-title">{t('nav.games')}</h1>
+          <nav className="sub-nav">
+            <NavLink to="/games" className={({ isActive }) => `sub-link ${isActive ? 'active' : ''}`}>All</NavLink>
+            <NavLink to="/games/japan" className={({ isActive }) => `sub-link ${isActive ? 'active' : ''}`}>Japan</NavLink>
+            <NavLink to="/games/science" className={({ isActive }) => `sub-link ${isActive ? 'active' : ''}`}>Science</NavLink>
+            <NavLink to="/games/fun" className={({ isActive }) => `sub-link ${isActive ? 'active' : ''}`}>Fun</NavLink>
+          </nav>
+        </div>
 
       {/* Games Grid */}
       {filteredGames.length > 0 ? (
