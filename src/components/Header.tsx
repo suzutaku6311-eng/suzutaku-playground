@@ -28,15 +28,6 @@ export const Header: React.FC = () => {
           <NavLink to="/games" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
             {t('nav.games')}
           </NavLink>
-          <NavLink to="/category/japan" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-            {t('nav.japan')}
-          </NavLink>
-          <NavLink to="/category/science" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-            {t('nav.science')}
-          </NavLink>
-          <NavLink to="/category/fun" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-            {t('nav.fun')}
-          </NavLink>
           <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
             {t('nav.about')}
           </NavLink>
@@ -83,27 +74,6 @@ export const Header: React.FC = () => {
           onClick={closeMenu}
         >
           {t('nav.games')}
-        </NavLink>
-        <NavLink 
-          to="/category/japan" 
-          className={({ isActive }) => `mobile-link ${isActive ? 'active' : ''}`}
-          onClick={closeMenu}
-        >
-          {t('nav.japan')}
-        </NavLink>
-        <NavLink 
-          to="/category/science" 
-          className={({ isActive }) => `mobile-link ${isActive ? 'active' : ''}`}
-          onClick={closeMenu}
-        >
-          {t('nav.science')}
-        </NavLink>
-        <NavLink 
-          to="/category/fun" 
-          className={({ isActive }) => `mobile-link ${isActive ? 'active' : ''}`}
-          onClick={closeMenu}
-        >
-          {t('nav.fun')}
         </NavLink>
         <NavLink 
           to="/about" 
