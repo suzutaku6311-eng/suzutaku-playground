@@ -104,10 +104,22 @@ export const ja: TranslationKeys = {
   },
   universe: {
     title: "宇宙のスケール",
-    subtitle: "極小のクォークから宇宙の果てまで、あらゆるスケールをズーム体験しよう。"
+    subtitle: "極小のクォークから宇宙の果てまで、あらゆるスケールをズーム体験しよう."
   },
   button: {
     title: "無限ボタン",
     subtitle: "巨大なボタン。何回も押すと、一体何が起こる…？"
+  },
+  gravity: {
+    title: "重力シミュレーター",
+    subtitle: "重力の力とオブジェクトで遊ぼう"
+  },
+  colorMixer: {
+    title: "カラーミキサー",
+    subtitle: "色を混ぜ合わせて新しい色を発見しよう"
+  },
+  particlePlayground: {
+    title: "パーティクルプレイグラウンド",
+    subtitle: "パーティクルエフェクトを作成・観察しよう"
   }
 };

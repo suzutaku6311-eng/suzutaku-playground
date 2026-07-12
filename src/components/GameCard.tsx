@@ -77,6 +77,69 @@ const renderThumbnailArt = (id: string) => {
           <path d="M152 80 C 158 84, 162 84, 168 80" stroke="#FFAAAA" strokeWidth="2" strokeLinecap="round" fill="none" />
         </svg>
       );
+    case 'gravity-sim':
+      return (
+        <svg viewBox="0 0 320 180" width="100%" height="100%" className="thumbnail-visual">
+          <defs>
+            <linearGradient id="gravityGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#1E3A8A" />
+              <stop offset="100%" stopColor="#3B82F6" />
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#gravityGrad)" />
+          {/* Apple/Ball falling */}
+          <circle cx="160" cy="60" r="20" fill="#EF4444" />
+          <path d="M160 85 L160 140" stroke="#FFFFFF" strokeWidth="4" strokeDasharray="6 6" strokeLinecap="round" />
+          <polygon points="150,130 170,130 160,145" fill="#FFFFFF" />
+          <rect x="80" y="150" width="160" height="10" fill="#1C1C1C" rx="5" />
+        </svg>
+      );
+    case 'color-mixer':
+      return (
+        <svg viewBox="0 0 320 180" width="100%" height="100%" className="thumbnail-visual">
+          <defs>
+            <linearGradient id="colorMixerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#FDE047" />
+              <stop offset="100%" stopColor="#F97316" />
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#colorMixerGrad)" />
+          {/* CMYK / RGB overlapping circles */}
+          <g style={{ mixBlendMode: 'multiply' }}>
+            <circle cx="140" cy="80" r="35" fill="#38BDF8" opacity="0.9" />
+            <circle cx="180" cy="80" r="35" fill="#FB7185" opacity="0.9" />
+            <circle cx="160" cy="115" r="35" fill="#FDE047" opacity="0.9" />
+          </g>
+        </svg>
+      );
+    case 'particle-playground':
+      return (
+        <svg viewBox="0 0 320 180" width="100%" height="100%" className="thumbnail-visual">
+          <defs>
+            <linearGradient id="particleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0F172A" />
+              <stop offset="100%" stopColor="#334155" />
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#particleGrad)" />
+          {/* Central emitter */}
+          <circle cx="160" cy="90" r="10" fill="#FFFFFF" filter="drop-shadow(0 0 5px #FFFFFF)" />
+          {/* Particles */}
+          <circle cx="120" cy="50" r="3" fill="#A7F3D0" />
+          <circle cx="200" cy="60" r="4" fill="#FDE047" />
+          <circle cx="130" cy="130" r="2.5" fill="#FBCFE8" />
+          <circle cx="190" cy="120" r="3.5" fill="#BAE6FD" />
+          <circle cx="160" cy="30" r="2" fill="#FFFFFF" />
+          <circle cx="100" cy="90" r="4" fill="#C4B5FD" />
+          <circle cx="220" cy="90" r="3" fill="#FECACA" />
+          <circle cx="150" cy="150" r="4.5" fill="#86EFAC" />
+          {/* Trails */}
+          <path d="M160 90 L120 50" stroke="#A7F3D0" strokeWidth="1" strokeDasharray="2 4" opacity="0.5" />
+          <path d="M160 90 L200 60" stroke="#FDE047" strokeWidth="1" strokeDasharray="2 4" opacity="0.5" />
+          <path d="M160 90 L130 130" stroke="#FBCFE8" strokeWidth="1" strokeDasharray="2 4" opacity="0.5" />
+          <path d="M160 90 L190 120" stroke="#BAE6FD" strokeWidth="1" strokeDasharray="2 4" opacity="0.5" />
+        </svg>
+      );
     default:
       return (
         <svg viewBox="0 0 320 180" width="100%" height="100%" className="thumbnail-visual">

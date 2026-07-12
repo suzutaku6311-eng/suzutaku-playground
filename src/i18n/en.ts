@@ -107,7 +107,20 @@ export const en = {
   button: {
     title: "Infinite Button",
     subtitle: "A simple giant button. What happens if you press it many times?"
-  }
+  },
+  // New game translations
+  gravity: {
+    title: "Gravity Simulator",
+    subtitle: "Play with gravity forces and objects."
+  },
+  colorMixer: {
+    title: "Color Mixer",
+    subtitle: "Blend colors to discover new shades."
+  },
+  particlePlayground: {
+    title: "Particle Playground",
+    subtitle: "Create and watch particle effects."
+  },
 };
 
 export type TranslationKeys = typeof en;

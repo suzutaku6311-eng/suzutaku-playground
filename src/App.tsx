@@ -11,6 +11,9 @@ import { NotFoundPage } from './pages/NotFoundPage';
 import { KonbiniGame } from './games/konbini1000/KonbiniGame';
 import { UniverseGame } from './games/universeScale/UniverseGame';
 import { InfiniteButton } from './games/infiniteButton/InfiniteButton';
+import { GravitySim } from './games/gravitySim/GravitySim';
+import { ColorMixer } from './games/colorMixer/ColorMixer';
+import { ParticlePlayground } from './games/particlePlayground/ParticlePlayground';
 import { Analytics } from '@vercel/analytics/react';
 import './styles/global.css';
 
@@ -30,6 +33,9 @@ function App() {
               <Route path="/games/konbini-1000" element={<KonbiniGame />} />
               <Route path="/games/universe-scale" element={<UniverseGame />} />
               <Route path="/games/infinite-button" element={<InfiniteButton />} />
+              <Route path="/games/gravity-sim" element={<GravitySim />} />
+              <Route path="/games/color-mixer" element={<ColorMixer />} />
+              <Route path="/games/particle-playground" element={<ParticlePlayground />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </main>
