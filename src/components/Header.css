@@ -11,10 +11,12 @@
 
 /* Sub navigation */
 .sub-nav {
-  display: none; /* hidden on desktop, will show via media query */
+  display: flex;
   gap: var(--spacing-md);
+  justify-content: center;
   margin-top: var(--spacing-sm);
 }
+
 
 .sub-nav .sub-link {
   font-size: 0.9rem;
