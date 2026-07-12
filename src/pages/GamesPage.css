@@ -1,0 +1,78 @@
+.games-page {
+  padding: var(--spacing-xl) 0 var(--spacing-xxl) 0;
+}
+
+.page-header {
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: var(--spacing-xs);
+}
+
+.page-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+/* Filters */
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: var(--radius-round);
+  border: 1px solid var(--card-border);
+  background-color: var(--card-bg);
+  transition: all var(--transition-fast);
+}
+
+.filter-tab:hover {
+  border-color: var(--text-color);
+  transform: translateY(-1px);
+}
+
+.filter-tab.active {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border-color: var(--text-color);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Category specific active styles if wanted */
+.filter-tab.active.tab-japan {
+  background-color: var(--accent-japan);
+  border-color: var(--accent-japan);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(233, 75, 60, 0.2);
+}
+
+.filter-tab.active.tab-science {
+  background-color: var(--accent-science);
+  border-color: var(--accent-science);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 128, 128, 0.2);
+}
+
+.filter-tab.active.tab-fun {
+  background-color: var(--accent-fun);
+  border-color: var(--accent-fun);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.2);
+}
+
+.no-games-message {
+  text-align: center;
+  padding: var(--spacing-xxl) 0;
+  color: var(--text-muted);
+}

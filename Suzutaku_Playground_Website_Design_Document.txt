@@ -1,0 +1,1018 @@
+Suzutaku Playground
+Website Design Document
+Version 1.0
+
+==================================================
+1. Project Overview
+==================================================
+
+Project name:
+Suzutaku Playground
+
+Domain:
+suzutakuplayground.com
+
+Tagline:
+Play with ideas.
+
+Short description:
+Small interactive games about Japan, science, and fun.
+
+Japanese description:
+日本・科学・遊びをテーマにした、短時間で楽しめるインタラクティブゲーム集。
+
+Core concept:
+- All content is presented as a game or interactive experience.
+- Users should understand the idea by playing, not by reading long explanations.
+- Each game should be easy to start and playable in a browser.
+- The site should feel personal, curious, playful, and memorable.
+- The site is inspired by interactive websites such as Neal.fun, but it must have its own visual identity and original games.
+
+Primary goal:
+Publish small web games regularly and grow Suzutaku Playground into a recognizable personal game brand.
+
+Initial success target:
+- Launch the website with a working home page.
+- Publish at least one playable game.
+- Get 100 users who are not personal acquaintances.
+- Measure which games are opened, completed, and shared.
+
+==================================================
+2. Target Audience
+==================================================
+
+Primary audience:
+- People who enjoy short browser games.
+- Users interested in Japan.
+- Students and adults interested in science.
+- People looking for unusual, funny, or shareable online experiences.
+- English-speaking international users.
+- Japanese users.
+
+Recommended age:
+Approximately 10 years old and above.
+
+Typical session:
+- 30 seconds to 5 minutes per game.
+- Users may play several games in one visit.
+
+Platforms:
+- Smartphone
+- Tablet
+- Desktop browser
+
+Priority:
+Mobile-first design, while remaining comfortable on desktop.
+
+==================================================
+3. Content Categories
+==================================================
+
+All published content is treated as a game.
+
+Main categories:
+
+1. Japan
+Games about Japanese culture, society, food, school life, transportation, geography, and everyday life.
+
+Examples:
+- Spend ¥1000 at a Konbini
+- Build Your Bento
+- Japanese School Day
+- Ride the Shinkansen
+- Capsule Toy Machine
+- Summer Festival
+- Japanese Vending Machine
+- How Far Is Japan?
+
+2. Science
+Games that make scientific ideas understandable through interaction.
+
+Examples:
+- How Small Is an Atom?
+- Scale of the Universe
+- Build an Atom
+- Travel Through the Human Body
+- Earth’s 4.6 Billion Years
+- DNA Builder
+- Gravity Playground
+- Electricity Simulator
+
+3. Fun
+Funny, strange, experimental, or intentionally pointless games made mainly for entertainment.
+
+Examples:
+- Infinite Button
+- Banana Physics
+- Mischief of the Wind
+- Push Everything
+- Useless Machine
+- How Long Can You Wait?
+- Random Life Generator
+- One Million Clicks
+
+Category rules:
+- Every game belongs to one primary category.
+- A game may also have tags.
+- Categories remain limited to Japan, Science, and Fun for the initial version.
+- New categories should not be added until there are enough games to justify them.
+
+==================================================
+4. Brand Identity
+==================================================
+
+Brand name:
+Suzutaku Playground
+
+Brand position:
+A personal playground of small interactive games.
+
+Brand personality:
+- Curious
+- Playful
+- Friendly
+- Clever
+- Slightly unusual
+- Simple rather than corporate
+
+Primary tagline:
+Play with ideas.
+
+Alternative supporting line:
+Small interactive games about Japan, science, and fun.
+
+Japanese supporting line:
+遊びながら、ちょっと発見する。
+
+Logo direction:
+- Text-based logo at first.
+- “Suzutaku Playground” should be clearly readable.
+- Avoid overused Japanese symbols such as Mount Fuji, torii gates, or cherry blossoms as the main logo.
+- A simple geometric symbol or playful “SP” mark may be developed later.
+- The logo must work in black and white.
+
+Visual style:
+- Minimal
+- Warm
+- Modern
+- Large typography
+- Generous spacing
+- Rounded cards
+- Light animation
+- No excessive visual clutter
+
+Suggested color direction:
+Background: warm off-white, such as #F7F4ED
+Main text: near black, such as #1C1C1C
+Primary accent: warm red, such as #E94B3C
+Japan category accent: red or vermilion
+Science category accent: blue or teal
+Fun category accent: yellow, orange, or purple
+
+Important:
+Final color values should be tested for accessibility and sufficient contrast.
+
+Typography:
+- English: clean sans-serif
+- Japanese: readable Japanese sans-serif
+- Use a limited number of font weights.
+- Avoid decorative fonts for body text.
+
+==================================================
+5. Language Design
+==================================================
+
+Initial languages:
+- English
+- Japanese
+
+Recommended default:
+English, because the project aims to reach international users.
+
+Language switch:
+- Clearly visible in the header.
+- Simple “EN / 日本語” control.
+- The selected language should remain active during the visit.
+- URLs may later use /en/ and /ja/, but the first version may use a simple language state.
+
+Translation policy:
+- Game titles may differ slightly between English and Japanese when a direct translation sounds unnatural.
+- Instructions should be short.
+- Avoid machine-like translations.
+- All essential buttons, game descriptions, and result screens should support both languages.
+
+==================================================
+6. Overall Site Structure
+==================================================
+
+Initial sitemap:
+
+/
+Home page
+
+/games
+All games
+
+/category/japan
+Japan games
+
+/category/science
+Science games
+
+/category/fun
+Fun games
+
+/games/konbini-1000
+Example game page
+
+/about
+About Suzutaku Playground
+
+/privacy
+Privacy policy
+
+/terms
+Terms or site notice, if needed
+
+Optional later pages:
+/updates
+Development updates
+
+/support
+Support or donation page
+
+Recommended initial release:
+- Home
+- One playable game
+- About
+- Privacy
+- 404 page
+
+==================================================
+7. Header Design
+==================================================
+
+Desktop header:
+Left:
+Suzutaku Playground logo
+
+Right:
+- Games
+- Japan
+- Science
+- Fun
+- About
+- Language switch
+
+Mobile header:
+- Logo
+- Menu button
+- Language switch
+
+Header behavior:
+- Clean and compact.
+- May remain sticky while scrolling.
+- Must not take too much vertical space.
+- The logo always links to the home page.
+
+==================================================
+8. Home Page Design
+==================================================
+
+The home page should immediately show that the site contains playable games.
+
+Recommended order:
+
+1. Hero section
+
+Main heading:
+Suzutaku Playground
+
+Tagline:
+Play with ideas.
+
+Supporting text:
+Small interactive games about Japan, science, and fun.
+
+Primary button:
+Play a game
+
+Secondary button:
+Browse all games
+
+The primary button should open the featured game or scroll to the featured section.
+
+2. Featured game
+
+One large card for the newest or strongest game.
+
+Example:
+Spend ¥1000 at a Konbini
+
+Contents:
+- Large thumbnail or animated preview
+- Short description
+- Category
+- Approximate play time
+- Play button
+
+3. Latest games
+
+A responsive grid of game cards.
+
+Desktop: three columns
+Tablet: two columns
+Mobile: one column
+
+4. Browse by category
+
+Three large category cards:
+- Japan
+- Science
+- Fun
+
+Each card should include:
+- Category name
+- One-line description
+- Simple visual identity
+- Number of available games
+
+5. About the project
+
+Short text:
+Suzutaku Playground is a collection of small browser games made by Suzutaku.
+
+Link:
+Learn more
+
+6. Footer
+
+Links:
+- About
+- X
+- GitHub
+- Privacy
+- Contact, if added later
+
+Footer text:
+Made by Suzutaku.
+
+==================================================
+9. Game Card Design
+==================================================
+
+Each game card contains:
+
+Required:
+- Thumbnail
+- Game title
+- Category
+- Short description
+- Play status
+
+Optional:
+- Play time
+- New badge
+- Popular badge
+- Language availability
+
+Statuses:
+- Play
+- Coming Soon
+- Prototype
+- Updated
+
+Card interaction:
+- Entire card should be clickable when the game is available.
+- Cards should have clear hover and focus states.
+- Coming Soon cards should not look identical to playable cards.
+- Avoid excessive text.
+
+Example:
+Title: Spend ¥1000 at a Konbini
+Category: Japan
+Description: Choose what to buy without going over your budget.
+Play time: 2 minutes
+Status: Play
+
+==================================================
+10. Game Page Template
+==================================================
+
+Each game page should have a reusable structure.
+
+Recommended structure:
+
+1. Minimal game header
+- Back to Playground
+- Game title
+- Language switch
+- Sound control, if required
+
+2. Game area
+- Main interactive experience
+- Full-width where appropriate
+- Optimized for touch and mouse
+
+3. Result screen
+- Result or score
+- Short personalized message
+- Replay button
+- Share button
+- Next game recommendation
+
+4. Information section
+- Very short explanation
+- Credits
+- Data sources for science or factual games
+- Last updated date where relevant
+
+5. Related games
+- Two or three recommended games
+
+Game design rule:
+The user should begin playing within a few seconds.
+
+Avoid:
+- Long tutorials
+- Account registration before play
+- Intrusive advertising
+- Pop-ups before the game begins
+
+==================================================
+11. First Game Recommendation
+==================================================
+
+First public game:
+Spend ¥1000 at a Konbini
+
+Category:
+Japan
+
+Core loop:
+- The player has ¥1000.
+- Products are displayed with prices.
+- The player adds items to a basket.
+- The total updates immediately.
+- The player tries to create a satisfying basket without exceeding the budget.
+- The result screen gives the basket a playful title.
+
+Possible products:
+- Onigiri
+- Tea
+- Sandwich
+- Pudding
+- Fried chicken
+- Instant noodles
+- Ice cream
+- Bento
+- Coffee
+- Snack
+
+Result examples:
+- Midnight Snack Master
+- Balanced Konbini Shopper
+- Dessert Specialist
+- Budget Genius
+- ¥37 Over Budget
+
+MVP requirements:
+- Product list
+- Add and remove items
+- Current total
+- Remaining budget
+- Complete button
+- Result message
+- Replay
+- English and Japanese
+- Mobile support
+
+Later improvements:
+- Different budgets
+- Breakfast, lunch, and midnight modes
+- Random daily products
+- Shareable result image
+- Realistic but fictionalized prices
+- Seasonal products
+
+==================================================
+12. All Games Page
+==================================================
+
+Purpose:
+Allow users to see the complete collection.
+
+Features:
+- All game cards
+- Category filter
+- Search, added only when there are enough games
+- Sort by newest or popular, added later
+
+Initial filter buttons:
+- All
+- Japan
+- Science
+- Fun
+
+Do not add complex filtering at launch.
+
+==================================================
+13. Category Pages
+==================================================
+
+Each category page contains:
+- Category title
+- Short description
+- Game card grid
+- Featured game in that category, later
+
+Suggested descriptions:
+
+Japan:
+Play with Japanese food, culture, school life, travel, and everyday experiences.
+
+Science:
+Explore scientific ideas through simple interactive games.
+
+Fun:
+Strange, funny, and experimental games made for pure enjoyment.
+
+==================================================
+14. About Page
+==================================================
+
+Recommended content:
+
+Title:
+About Suzutaku Playground
+
+Text:
+Suzutaku Playground is a personal collection of small browser games about Japan, science, and fun. The goal is to make ideas easier to understand and more memorable through interaction.
+
+Creator section:
+- Short creator introduction
+- Interest in games, science, and interactive experiences
+- Link to X
+- Link to GitHub
+
+Development story:
+- Started as a project to create small, accessible web games.
+- Built publicly as part of the journey from zero game revenue to the first earnings.
+
+Avoid:
+- Overly long biography
+- Personal information that is not relevant
+- Unnecessary contact details
+
+==================================================
+15. Navigation and User Flow
+==================================================
+
+Ideal first visit:
+1. User lands on the home page.
+2. User understands the concept within five seconds.
+3. User sees a featured game.
+4. User clicks Play.
+5. User begins within a few seconds.
+6. User finishes and receives a result.
+7. User shares or selects another game.
+
+Main navigation goal:
+Reduce the number of steps between discovery and play.
+
+Maximum recommended clicks:
+- Home to any game: one or two clicks
+- Game result to next game: one click
+
+==================================================
+16. Responsive Design
+==================================================
+
+Mobile-first requirements:
+- Touch targets should be large.
+- Text must remain readable without zooming.
+- No horizontal page scrolling unless intentionally part of a game.
+- Game controls should work with one finger where possible.
+- Cards should use one column on narrow screens.
+- Large games should fit within the viewport.
+- Avoid tiny icons.
+
+Desktop:
+- Use wider layouts but do not stretch text excessively.
+- Keep content centered with a maximum width.
+- Use hover effects as enhancement only.
+
+==================================================
+17. Accessibility
+==================================================
+
+Minimum requirements:
+- Sufficient text contrast
+- Keyboard-accessible navigation
+- Visible focus states
+- Alt text for meaningful images
+- Buttons must use clear labels
+- Do not rely only on color to communicate status
+- Allow reduced animation for users who prefer it
+- Avoid rapid flashing
+- Add captions or text alternatives for important audio information
+- Games should explain controls in simple language
+
+==================================================
+18. Animation and Sound
+==================================================
+
+Animation principles:
+- Use animation to show cause and effect.
+- Keep transitions quick.
+- Avoid animation that delays interaction.
+- Respect reduced-motion settings.
+
+Sound principles:
+- Sound off or restrained by default depending on the game.
+- Always provide a mute control when sound is used.
+- Do not autoplay loud audio.
+- Use short and recognizable feedback sounds.
+
+==================================================
+19. Technical Architecture
+==================================================
+
+Recommended initial stack:
+- React
+- TypeScript
+- Vite
+- CSS
+- GitHub
+- Vercel
+
+Optional libraries:
+- React Router for pages
+- Framer Motion for controlled animation
+- Canvas or SVG for interactive graphics
+- Three.js only for games that genuinely need 3D
+
+Avoid at launch:
+- Database
+- User accounts
+- Complex backend
+- Comment system
+- Global leaderboard
+- Heavy game engines for simple 2D experiences
+
+Game engines:
+Unity or Godot Web exports may be used later for selected games, but ordinary web technologies should be preferred for small games because they load faster.
+
+==================================================
+20. Recommended Project Structure
+==================================================
+
+suzutaku-playground/
+├── public/
+│   ├── images/
+│   ├── thumbnails/
+│   └── icons/
+├── src/
+│   ├── components/
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   ├── GameCard.tsx
+│   │   ├── CategoryCard.tsx
+│   │   └── LanguageSwitch.tsx
+│   ├── pages/
+│   │   ├── HomePage.tsx
+│   │   ├── GamesPage.tsx
+│   │   ├── CategoryPage.tsx
+│   │   ├── AboutPage.tsx
+│   │   └── NotFoundPage.tsx
+│   ├── games/
+│   │   └── konbini1000/
+│   │       ├── KonbiniGame.tsx
+│   │       ├── products.ts
+│   │       └── konbini.css
+│   ├── data/
+│   │   ├── games.ts
+│   │   └── categories.ts
+│   ├── i18n/
+│   │   ├── en.ts
+│   │   └── ja.ts
+│   ├── styles/
+│   │   ├── global.css
+│   │   └── variables.css
+│   ├── App.tsx
+│   └── main.tsx
+├── index.html
+├── package.json
+└── README.md
+
+==================================================
+21. Game Data Structure
+==================================================
+
+Recommended game data fields:
+- id
+- slug
+- titleEnglish
+- titleJapanese
+- descriptionEnglish
+- descriptionJapanese
+- category
+- thumbnail
+- status
+- playTime
+- featured
+- publishedDate
+- updatedDate
+- route
+- tags
+
+Example:
+{
+  id: "konbini-1000",
+  slug: "konbini-1000",
+  titleEnglish: "Spend ¥1000 at a Konbini",
+  titleJapanese: "コンビニで1000円使おう",
+  category: "Japan",
+  status: "play",
+  playTime: "2 min",
+  featured: true
+}
+
+==================================================
+22. Analytics
+==================================================
+
+Recommended measurements:
+- Home page visits
+- Game page visits
+- Game starts
+- Game completions
+- Replay clicks
+- Share clicks
+- Next-game clicks
+- Language selection
+- Device type
+- Country-level traffic where legally appropriate
+
+Important:
+Do not collect unnecessary personal data.
+
+Initial analytics tools:
+- Vercel Analytics or another privacy-conscious analytics tool
+
+Questions to answer:
+- Which game attracts the most clicks?
+- Which game is actually completed?
+- Which category is most popular?
+- Do users continue to a second game?
+- Do Japanese and English users behave differently?
+
+==================================================
+23. SEO and Sharing
+==================================================
+
+Each page should have:
+- Unique page title
+- Meta description
+- Social sharing image
+- Canonical URL
+- Language information
+- Clear heading structure
+
+Example home title:
+Suzutaku Playground — Play with ideas
+
+Example home description:
+Small interactive games about Japan, science, and fun.
+
+Game page title:
+Spend ¥1000 at a Konbini | Suzutaku Playground
+
+Sharing:
+- Result sharing should use short text.
+- Later, generate shareable result images.
+- Include an appealing Open Graph image for every game.
+
+==================================================
+24. Legal and Safety Requirements
+==================================================
+
+Required before wider launch:
+- Privacy policy
+- Cookie notice only if required by the selected analytics or advertising tools
+- Clear copyright notice
+- Credits for external assets
+- Licenses for fonts, sounds, images, and code libraries
+
+Content:
+- Avoid copyrighted characters and brands without permission.
+- Use fictional product designs where appropriate.
+- Do not directly copy Neal.fun games.
+- Concepts may be inspired by interactive web design, but graphics, writing, code, and game mechanics should be original.
+- Scientific games should cite reliable data sources.
+- Clearly identify simulations and approximations.
+
+==================================================
+25. Monetization Plan
+==================================================
+
+Phase 1:
+- No intrusive ads
+- Focus on quality, publishing, and traffic
+- Optional support link
+
+Phase 2:
+- Small support or donation button
+- Light advertising in non-game areas
+- Sponsorship opportunities
+
+Phase 3:
+- Sponsored educational games
+- Museum, school, tourism, or business collaborations
+- Premium game collections
+- Educational licensing
+- Related downloadable games or assets
+
+Revenue must not reduce usability.
+
+Avoid:
+- Full-screen ads before play
+- Forced account creation
+- Paywalls on the first games
+- Misleading buttons
+
+==================================================
+26. Development Phases
+==================================================
+
+Phase 1: Foundation
+- Register domain
+- Create GitHub repository
+- Create React, TypeScript, and Vite project
+- Establish visual variables
+- Create header and footer
+- Create responsive home page
+- Add placeholder game cards
+
+Phase 2: First game
+- Build Spend ¥1000 at a Konbini
+- Add English and Japanese
+- Test mobile controls
+- Add result screen
+- Add replay and next-game actions
+
+Phase 3: Initial release
+- Deploy to Vercel
+- Connect custom domain
+- Add analytics
+- Add About and Privacy pages
+- Test on Safari, Chrome, mobile, and desktop
+
+Phase 4: Content growth
+- Add one Science game
+- Add one Fun game
+- Improve category pages
+- Add social sharing previews
+
+Phase 5: Optimization
+- Review analytics
+- Improve loading speed
+- Improve game completion rates
+- Refine thumbnails and titles
+- Add more games based on user response
+
+==================================================
+27. Initial Release Scope
+==================================================
+
+Required:
+- Home page
+- Header
+- Footer
+- Three category links
+- Game card system
+- One playable game
+- English and Japanese
+- About page
+- Privacy page
+- Mobile support
+- Custom domain
+- Basic analytics
+- 404 page
+
+Not required:
+- Login
+- Account
+- Ranking
+- Comments
+- Database
+- Payment system
+- Search
+- Newsletter
+- Complex animations
+- Multiple playable games at launch
+
+==================================================
+28. Quality Checklist
+==================================================
+
+Before release:
+
+Brand:
+- Site name is consistent.
+- Tagline is visible.
+- Colors and typography are consistent.
+
+Navigation:
+- Every link works.
+- Logo returns home.
+- Mobile menu works.
+- Language switch works.
+
+Games:
+- The game starts quickly.
+- Instructions are understandable.
+- Touch and mouse controls work.
+- Replay works.
+- Result screen works.
+
+Performance:
+- Images are compressed.
+- Page loads quickly.
+- No unnecessary large libraries.
+- No broken assets.
+
+Accessibility:
+- Keyboard navigation works.
+- Focus states are visible.
+- Contrast is sufficient.
+- Images have alt text.
+
+Legal:
+- Asset licenses are confirmed.
+- Privacy page is available.
+- Credits are included.
+
+Testing:
+- Chrome desktop
+- Safari desktop
+- iPhone Safari
+- Android Chrome
+- Different screen sizes
+
+==================================================
+29. Final Design Direction
+==================================================
+
+Suzutaku Playground should not look like a large commercial game portal.
+
+It should feel like:
+- A personal collection
+- A digital toy box
+- A place for curiosity
+- A site where every card leads to a small surprise
+
+The central promise is:
+
+Play with ideas.
+
+Every decision should support:
+- Fast access
+- Simple interaction
+- Clear feedback
+- Memorable results
+- Easy movement to the next game
+
+==================================================
+30. Confirmed Decisions
+==================================================
+
+Site name:
+Suzutaku Playground
+
+Domain:
+suzutakuplayground.com
+
+Main tagline:
+Play with ideas.
+
+All content type:
+Games
+
+Categories:
+- Japan
+- Science
+- Fun
+
+Languages:
+- English
+- Japanese
+
+Initial platform:
+Web browser
+
+Initial technical direction:
+React, TypeScript, Vite, GitHub, and Vercel
+
+First recommended game:
+Spend ¥1000 at a Konbini

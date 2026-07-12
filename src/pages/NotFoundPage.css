@@ -1,0 +1,37 @@
+.notfound-page {
+  padding: var(--spacing-xxl) 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  justify-content: center;
+  min-height: 50vh;
+}
+
+.notfound-code {
+  font-size: 6rem;
+  font-weight: 900;
+  color: var(--accent-color);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.notfound-title {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.notfound-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 400px;
+  margin-bottom: var(--spacing-md);
+}
