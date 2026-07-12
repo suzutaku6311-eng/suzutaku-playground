@@ -171,7 +171,7 @@ export const InfiniteButton: React.FC = () => {
   const nextGame = games.find(g => g.id === 'konbini-1000');
 
   return (
-    <div className="container button-game-container page-wrapper-anim">
+    <div className="container button-game-container ">
       <div className="universe-header">
         <Link to="/" className="back-btn">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

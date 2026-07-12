@@ -43,7 +43,7 @@ export const UniverseGame: React.FC = () => {
   const sliderPercentage = (currentIndex / (universeObjects.length - 1)) * 100;
 
   return (
-    <div className="container universe-game-container page-wrapper-anim">
+    <div className="container universe-game-container ">
       <div className="universe-header">
         <Link to="/" className="back-btn">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
