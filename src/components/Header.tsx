@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 import './Header.css';
 
 export const Header: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -23,13 +24,28 @@ export const Header: React.FC = () => {
           <span className="logo-dot"></span>
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Top navigation */}
         <nav className="nav-links">
           <NavLink to="/games" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
             {t('nav.games')}
           </NavLink>
           <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
             {t('nav.about')}
+          </NavLink>
+        </nav>
+        {/* Secondary navigation for categories */}
+        <nav className="sub-nav">
+          <NavLink to="/games" className={({ isActive }) => `sub-link ${isActive && location.pathname === '/games' ? 'active' : ''}`}>
+            {t('nav.all')}
+          </NavLink>
+          <NavLink to="/games/japan" className={({ isActive }) => `sub-link ${isActive ? 'active' : ''}`}>
+            {t('nav.japan')}
+          </NavLink>
+          <NavLink to="/games/science" className={({ isActive }) => `sub-link ${isActive ? 'active' : ''}`}>
+            {t('nav.science')}
+          </NavLink>
+          <NavLink to="/games/fun" className={({ isActive }) => `sub-link ${isActive ? 'active' : ''}`}>
+            {t('nav.fun')}
           </NavLink>
         </nav>
 

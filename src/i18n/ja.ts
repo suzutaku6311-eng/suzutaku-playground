@@ -2,11 +2,12 @@ import type { TranslationKeys } from './en';
 
 export const ja: TranslationKeys = {
   nav: {
-    games: "ゲーム一覧",
+    games: "ゲーム",
+    all: "全て",
     japan: "日本",
     science: "科学",
-    fun: "遊び",
-    about: "アバウト",
+    fun: "楽しい",
+    about: "About",
   },
   hero: {
     title: "Suzutaku Playground",

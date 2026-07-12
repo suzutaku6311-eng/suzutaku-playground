@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useParams } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 import { games } from '../data/games';
 import { GameCard } from '../components/GameCard';
@@ -8,7 +9,8 @@ type FilterType = 'all' | 'japan' | 'science' | 'fun';
 
 export const GamesPage: React.FC = () => {
   const { t } = useLanguage();
-  const [activeFilter, setActiveFilter] = useState<FilterType>('all');
+  const { category } = useParams<{ category?: FilterType }>();
+  const activeFilter = category ?? 'all';
 
   const filteredGames = games.filter(game => {
     if (activeFilter === 'all') return true;
@@ -19,36 +21,11 @@ export const GamesPage: React.FC = () => {
     <div className="container games-page animate-fade-in">
       <div className="page-header">
         <h1 className="page-title">{t('nav.games')}</h1>
-        <p className="page-subtitle">{t('hero.description')}</p>
+        <p className="games-subtitle">All Japan Science Fun</p>
       </div>
 
-      {/* Filter Tabs */}
-      <div className="filter-tabs">
-        <button 
-          className={`filter-tab ${activeFilter === 'all' ? 'active' : ''}`}
-          onClick={() => setActiveFilter('all')}
-        >
-          All
-        </button>
-        <button 
-          className={`filter-tab tab-japan ${activeFilter === 'japan' ? 'active' : ''}`}
-          onClick={() => setActiveFilter('japan')}
-        >
-          {t('nav.japan')}
-        </button>
-        <button 
-          className={`filter-tab tab-science ${activeFilter === 'science' ? 'active' : ''}`}
-          onClick={() => setActiveFilter('science')}
-        >
-          {t('nav.science')}
-        </button>
-        <button 
-          className={`filter-tab tab-fun ${activeFilter === 'fun' ? 'active' : ''}`}
-          onClick={() => setActiveFilter('fun')}
-        >
-          {t('nav.fun')}
-        </button>
-      </div>
+      {/* Category line */}
+      <p className="games-categories">All Japan Science Fun</p>
 
       {/* Games Grid */}
       {filteredGames.length > 0 ? (

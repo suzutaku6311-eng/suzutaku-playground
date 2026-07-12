@@ -178,10 +178,3 @@ h3 {
 .animate-fade-in {
   animation: fadeIn var(--transition-normal) forwards;
 }
-
-/* Base fade transition for page wrappers */
-.page-wrapper-anim {
-  opacity: 0;
-  animation: fadeIn var(--transition-normal) cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-

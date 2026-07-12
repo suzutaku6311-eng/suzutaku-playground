@@ -1,7 +1,9 @@
 .game-card {
-  background-color: var(--card-bg);
+  background: rgba(255, 255, 255, 0.25);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
   display: flex;
   flex-direction: column;

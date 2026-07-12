@@ -23,7 +23,7 @@ function App() {
           <main style={{ flexGrow: 1, padding: '20px 0' }}>
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/games" element={<GamesPage />} />
+              <Route path="/games/:category?" element={<GamesPage />} />
               <Route path="/category/:id" element={<CategoryPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/privacy" element={<PrivacyPage />} />

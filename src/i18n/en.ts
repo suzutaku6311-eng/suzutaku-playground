@@ -1,6 +1,7 @@
 export const en = {
   nav: {
     games: "Games",
+    all: "All",
     japan: "Japan",
     science: "Science",
     fun: "Fun",
