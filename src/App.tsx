@@ -1,8 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { LanguageProvider } from './i18n/LanguageContext';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { HomePage } from './pages/HomePage';
+
 import { GamesPage } from './pages/GamesPage';
 import { CategoryPage } from './pages/CategoryPage';
 import { AboutPage } from './pages/AboutPage';
@@ -22,7 +22,7 @@ function App() {
           <Header />
           <main style={{ flexGrow: 1, padding: '20px 0' }}>
             <Routes>
-              <Route path="/" element={<HomePage />} />
+              <Route path="/" element={<Navigate to="/games" replace />} />
               <Route path="/games/:category?" element={<GamesPage />} />
               <Route path="/category/:id" element={<CategoryPage />} />
               <Route path="/about" element={<AboutPage />} />
