@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { track } from '@vercel/analytics';
 import { useLanguage } from '../../i18n/LanguageContext';
 import { products } from './products';
 import type { Product } from './products';
@@ -205,12 +206,22 @@ export const KonbiniGame: React.FC = () => {
     const rating = evaluateBasket();
     setResultRating(rating);
     setIsFinished(true);
+    
+    // Analytics
+    track('game_complete', { 
+      game: 'konbini-1000', 
+      rating: rating, 
+      total: totalAmount 
+    });
   };
 
   const handleReplay = () => {
     setBasket([]);
     setIsFinished(false);
     setResultRating('');
+
+    // Analytics
+    track('game_replay', { game: 'konbini-1000' });
   };
 
   const handleShare = () => {

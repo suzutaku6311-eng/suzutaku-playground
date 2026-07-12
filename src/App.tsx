@@ -9,6 +9,9 @@ import { AboutPage } from './pages/AboutPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { KonbiniGame } from './games/konbini1000/KonbiniGame';
+import { UniverseGame } from './games/universeScale/UniverseGame';
+import { InfiniteButton } from './games/infiniteButton/InfiniteButton';
+import { Analytics } from '@vercel/analytics/react';
 import './styles/global.css';
 
 function App() {
@@ -25,11 +28,14 @@ function App() {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/privacy" element={<PrivacyPage />} />
               <Route path="/games/konbini-1000" element={<KonbiniGame />} />
+              <Route path="/games/universe-scale" element={<UniverseGame />} />
+              <Route path="/games/infinite-button" element={<InfiniteButton />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </main>
           <Footer />
         </div>
+        <Analytics />
       </Router>
     </LanguageProvider>
   );

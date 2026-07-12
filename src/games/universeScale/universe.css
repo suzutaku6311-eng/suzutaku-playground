@@ -1,0 +1,171 @@
+.universe-game-container {
+  padding: var(--spacing-md) 0 var(--spacing-xxl) 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.universe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+/* Main Display Area */
+.universe-viewer {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--spacing-xl);
+}
+
+.universe-svg-container {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scale-label-overlay {
+  position: absolute;
+  bottom: var(--spacing-md);
+  right: var(--spacing-md);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--accent-science);
+  background-color: rgba(247, 244, 237, 0.9);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--card-border);
+}
+
+/* Control Slider Section */
+.universe-controls {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  position: relative;
+}
+
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.universe-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: var(--radius-round);
+  background: var(--card-border);
+  outline: none;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.universe-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent-science);
+  cursor: pointer;
+  border: 4px solid var(--card-bg);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.1s ease;
+}
+
+.universe-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.universe-slider::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent-science);
+  cursor: pointer;
+  border: 4px solid var(--card-bg);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.1s ease;
+}
+
+.universe-slider::-moz-range-thumb:hover {
+  transform: scale(1.15);
+}
+
+/* Slider ticks helper */
+.slider-labels-helper {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 0 var(--spacing-xs);
+}
+
+/* Detail Card */
+.object-details-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  min-height: 160px;
+  justify-content: center;
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  border-bottom: 2px solid var(--accent-science);
+  padding-bottom: var(--spacing-xs);
+}
+
+.details-title {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--text-color);
+}
+
+.details-size {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--accent-science);
+}
+
+.details-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}

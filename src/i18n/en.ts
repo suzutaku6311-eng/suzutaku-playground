@@ -99,6 +99,14 @@ export const en = {
       justHungry: "You filled up on heavy meals. Time for a food coma!",
     },
   },
+  universe: {
+    title: "Scale of the Universe",
+    subtitle: "Zoom through dimensions from subatomic quarks to the edge of space."
+  },
+  button: {
+    title: "Infinite Button",
+    subtitle: "A simple giant button. What happens if you press it many times?"
+  }
 };
 
 export type TranslationKeys = typeof en;

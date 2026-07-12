@@ -101,4 +101,12 @@ export const ja: TranslationKeys = {
       justHungry: "がっつり系のご飯ばかり選びました。あとは寝るだけです！",
     },
   },
+  universe: {
+    title: "宇宙のスケール",
+    subtitle: "極小のクォークから宇宙の果てまで、あらゆるスケールをズーム体験しよう。"
+  },
+  button: {
+    title: "無限ボタン",
+    subtitle: "巨大なボタン。何回も押すと、一体何が起こる…？"
+  }
 };

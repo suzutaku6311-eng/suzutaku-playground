@@ -19,13 +19,13 @@ export const categories: Category[] = [
     nameKey: "categories.science.title",
     descKey: "categories.science.desc",
     colorVar: "var(--accent-science)",
-    count: 0,
+    count: 1,
   },
   {
     id: "fun",
     nameKey: "categories.fun.title",
     descKey: "categories.fun.desc",
     colorVar: "var(--accent-fun)",
-    count: 0,
+    count: 1,
   },
 ];
