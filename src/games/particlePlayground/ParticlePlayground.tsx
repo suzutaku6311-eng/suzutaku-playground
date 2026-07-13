@@ -26,7 +26,7 @@ export const ParticlePlayground: React.FC = () => {
   const { t, language } = useLanguage();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const requestRef = useRef<number>();
+  const requestRef = useRef<number | undefined>(undefined);
   const particlesRef = useRef<Particle[]>([]);
   
   const [theme, setTheme] = useState<Theme>('rainbow');

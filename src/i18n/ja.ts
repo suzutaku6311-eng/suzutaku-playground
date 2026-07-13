@@ -121,5 +121,50 @@ export const ja: TranslationKeys = {
   particlePlayground: {
     title: "パーティクルプレイグラウンド",
     subtitle: "パーティクルエフェクトを作成・観察しよう"
+  },
+  tokyoDistance: {
+    title: "東京からの距離感",
+    subtitle: "指定した2つの地点間の距離は、日本でいうと東京駅からどこまで？",
+    from: "出発地 (例: ロンドン)",
+    to: "目的地 (例: パリ)",
+    calculate: "距離を測る",
+    calculating: "計算中...",
+    resultMsg: "その距離は、東京駅からだいたい...",
+    distance: "距離",
+    fallbackMsg: "※陸路が見つからないため、直線距離で計算しました。",
+    error: "距離の計算に失敗しました。別の地名をお試しください。"
+  },
+  britishSarcasm: {
+    title: "それってイギリス人の皮肉？あてゲーム",
+    subtitle: "紳士的な笑顔と丁寧な言葉の裏に隠された驚愕の本音を見破れるか？"
+  },
+  dorayakiBaibain: {
+    title: "どら焼き・バイバイン増殖シミュレーター",
+    subtitle: "1個のどら焼きが指数関数的に増え続けたら？部屋、東京ドーム、そして地球を埋め尽くす恐怖！"
+  },
+  kitetsuBladeLuck: {
+    title: "妖刀すり抜けシミュレーター",
+    subtitle: ""
+  },
+  flagQuiz: {
+    title: "世界国旗あてクイズ",
+    subtitle: "国旗から国名を当てる地理クイズ！"
+  },
+  elementQuiz: {
+    title: "元素記号あてクイズ",
+    subtitle: "周期表の元素記号から元素名を当てるサイエンスクイズ！"
+  },
+  dartsTrip: {
+    title: "地球儀ダーツの旅",
+    subtitle: "ゆっくり回る3D地球儀にダーツを投げて旅行先の国を決めよう！バーチャル航空券＆観光ガイド付き"
+  },
+  sushiTyping: {
+    title: "回転寿司タイピング英語 (Sushi-Da English)",
+    subtitle: "レーンを流れるお皿の英語テキストを高速タイピングして「お得」を目指せ！"
+  },
+  infiniteRunner: {
+    title: "無限ラン＆ジャンプ：インフィニティ・マリオ",
+    subtitle: "横スクロールで自動生成される無限の世界で、二段ジャンプ＆敵を踏んで自己記録を目指す爽快アクション！"
   }
 };
+

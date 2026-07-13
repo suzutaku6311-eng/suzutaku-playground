@@ -1,0 +1,207 @@
+.egg-widget-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1rem 1.5rem;
+  min-height: 160px;
+}
+
+/* ==================
+   Egg Container
+================== */
+.egg-container {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.egg-svg {
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.15));
+  transition: transform 0.15s ease;
+}
+
+.egg-container:hover .egg-svg {
+  transform: scale(1.08);
+}
+
+/* Egg stages */
+.egg-idle .egg-svg {
+  animation: eggBob 2.5s ease-in-out infinite;
+}
+
+.egg-shaking .egg-svg {
+  animation: eggShake 0.4s ease-in-out infinite;
+}
+
+.egg-cracking .egg-svg {
+  animation: eggShakeFast 0.25s ease-in-out infinite;
+}
+
+@keyframes eggBob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(-6px) rotate(2deg); }
+}
+
+@keyframes eggShake {
+  0%   { transform: rotate(0deg) translateX(0); }
+  25%  { transform: rotate(-8deg) translateX(-4px); }
+  50%  { transform: rotate(0deg) translateX(0); }
+  75%  { transform: rotate(8deg) translateX(4px); }
+  100% { transform: rotate(0deg) translateX(0); }
+}
+
+@keyframes eggShakeFast {
+  0%   { transform: rotate(-12deg) translateX(-6px) scale(1.05); }
+  50%  { transform: rotate(12deg)  translateX(6px)  scale(1.05); }
+  100% { transform: rotate(-12deg) translateX(-6px) scale(1.05); }
+}
+
+/* Crack overlay */
+.egg-cracks {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: crackAppear 0.3s ease forwards;
+}
+
+@keyframes crackAppear {
+  from { opacity: 0; transform: translateX(-50%) scale(0.8); }
+  to   { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+
+/* Hint text */
+.egg-hint {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-align: center;
+  letter-spacing: 0.02em;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================
+   Hatch Scene
+================== */
+.hatch-scene {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Shell halves fly apart */
+.shell-left {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: shellFlyLeft 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+}
+
+.shell-right {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: shellFlyRight 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+}
+
+@keyframes shellFlyLeft {
+  0%   { opacity: 1; transform: translateX(-50%) rotate(0deg); }
+  60%  { opacity: 1; transform: translateX(calc(-50% - 80px)) rotate(-40deg) translateY(-30px); }
+  100% { opacity: 0; transform: translateX(calc(-50% - 120px)) rotate(-60deg) translateY(20px); }
+}
+
+@keyframes shellFlyRight {
+  0%   { opacity: 1; transform: translateX(-50%) rotate(0deg); }
+  60%  { opacity: 1; transform: translateX(calc(-50% + 80px)) rotate(40deg) translateY(-30px); }
+  100% { opacity: 0; transform: translateX(calc(-50% + 120px)) rotate(60deg) translateY(20px); }
+}
+
+/* Rabbit born animation */
+.rabbit-born {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: rabbitPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s both;
+  position: relative;
+}
+
+@keyframes rabbitPop {
+  0%   { opacity: 0; transform: scale(0) translateY(20px); }
+  70%  { transform: scale(1.12) translateY(-5px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Sparkles around rabbit */
+.rabbit-sparkles {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 140px;
+  pointer-events: none;
+}
+
+.rb-star {
+  position: absolute;
+  font-size: 1.2rem;
+  animation: starBurst 1s ease forwards;
+  opacity: 0;
+}
+
+.rb-star-1 { top: 10px; left: 0px;   animation-delay: 0.5s; }
+.rb-star-2 { top: 0px;  left: 60px;  animation-delay: 0.6s; }
+.rb-star-3 { top: 10px; left: 120px; animation-delay: 0.7s; }
+.rb-star-4 { top: 60px; left: 130px; animation-delay: 0.8s; }
+.rb-star-5 { top: 60px; left: -10px; animation-delay: 0.9s; }
+
+@keyframes starBurst {
+  0%   { opacity: 0; transform: scale(0) rotate(-30deg); }
+  40%  { opacity: 1; transform: scale(1.4) rotate(10deg); }
+  70%  { opacity: 1; transform: scale(1) rotate(0deg); }
+  100% { opacity: 0; transform: scale(0.5) translateY(-15px); }
+}
+
+/* Message & reset */
+.rabbit-msg {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-color);
+  margin: 0;
+  animation: rabbitPop 0.5s ease 0.9s both;
+}
+
+.rabbit-reset-btn {
+  background: linear-gradient(135deg, #F9A8D4, #F472B6);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 3px 10px rgba(244, 114, 182, 0.4);
+  animation: rabbitPop 0.5s ease 1.1s both;
+}
+
+.rabbit-reset-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 6px 16px rgba(244, 114, 182, 0.5);
+}

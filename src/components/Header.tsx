@@ -24,6 +24,15 @@ export const Header: React.FC = () => {
           <span className="logo-dot"></span>
         </Link>
 
+        <nav className="nav-links">
+          <NavLink to="/games" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+            {t('nav.games')}
+          </NavLink>
+          <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+            {t('nav.about')}
+          </NavLink>
+        </nav>
+
         <div className="nav-right">
           {/* Language Switch */}
           <div className="lang-switch">

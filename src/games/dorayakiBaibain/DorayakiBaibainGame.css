@@ -1,0 +1,456 @@
+.baibain-game {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 4rem;
+}
+
+/* Header */
+.baibain-header {
+  text-align: center;
+  margin-bottom: 0.4rem;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.baibain-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #D97706, #F59E0B);
+  color: #FFFFFF;
+  font-size: clamp(0.9rem, 2vw, 1.15rem);
+  font-weight: 800;
+  padding: 0.4rem 1.4rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.03em;
+}
+
+.baibain-title {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 950;
+  color: var(--text-color);
+  margin-bottom: 0.2rem;
+  letter-spacing: -0.02em;
+}
+
+.baibain-subtitle {
+  font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+  font-weight: 700;
+  color: var(--text-muted);
+  max-width: 820px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Main Stats Display Dashboard (2 Columns: Count, Milestone) */
+.baibain-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.2rem;
+  align-items: stretch;
+}
+
+@media (max-width: 850px) {
+  .baibain-dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dash-counter-box {
+  background: var(--card-bg);
+  border: 3px solid #F59E0B;
+  border-radius: 24px;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 28px rgba(245, 158, 11, 0.15);
+}
+
+.dash-label {
+  font-size: clamp(1.2rem, 2.3vw, 1.4rem);
+  font-weight: 800;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.dash-count-giant {
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  font-weight: 950;
+  color: #D97706;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.dash-unit {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--text-color);
+}
+
+.dash-submath {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-weight: 700;
+  color: var(--text-color);
+  background: rgba(245, 158, 11, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+}
+
+/* Milestone Card */
+.milestone-card {
+  background: var(--card-bg);
+  border: 3px solid var(--card-border);
+  border-radius: 24px;
+  padding: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.milestone-earth-danger {
+  border-color: #EF4444 !important;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(245, 158, 11, 0.08)) !important;
+  animation: pulse-danger 2s infinite ease-in-out;
+}
+
+@keyframes pulse-danger {
+  0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(239, 68, 68, 0.6); }
+}
+
+.milestone-icon {
+  font-size: clamp(3.5rem, 6vw, 4.8rem);
+  flex-shrink: 0;
+}
+
+.milestone-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.milestone-level-badge {
+  display: inline-block;
+  background: #EF4444;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  font-weight: 900;
+  padding: 0.2rem 0.8rem;
+  border-radius: 6px;
+  align-self: flex-start;
+}
+
+.milestone-title {
+  font-size: clamp(1.4rem, 2.8vw, 1.85rem);
+  font-weight: 950;
+  color: var(--text-color);
+  line-height: 1.25;
+}
+
+.milestone-desc {
+  font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+  font-weight: 700;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Bottom Centered Controls inside Live Physics Container */
+.canvas-bottom-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.hero-double-btn {
+  background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 20px;
+  padding: 1.2rem 3.6rem;
+  font-size: clamp(1.4rem, 2.6vw, 1.8rem);
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.45);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.04em;
+}
+
+.hero-double-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(59, 130, 246, 0.65);
+}
+
+.btn-reset-subtle {
+  background: var(--bg-color);
+  border: 2px solid var(--border-color);
+  color: var(--text-muted);
+  border-radius: 16px;
+  padding: 0.9rem 1.6rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-reset-subtle:hover {
+  background: var(--border-color);
+  color: var(--text-color);
+}
+
+/* Widescreen Full-Width Live Physics Container */
+.full-width-panel {
+  width: 100%;
+  background: var(--card-bg);
+  border: 3px solid var(--card-border);
+  border-radius: 28px;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.22);
+}
+
+/* Top-Left Live Stream Overlay inside Simulation Canvas */
+.stage-topleft-live {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 9999px;
+  padding: 0.55rem 1.15rem;
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(239, 68, 68, 0.25) inset;
+  pointer-events: none;
+  animation: fadeIn 0.35s ease;
+}
+
+.live-rec-ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.22);
+  border: 1.5px solid rgba(239, 68, 68, 0.6);
+  animation: hapticRingPulse 1.4s infinite ease-out;
+}
+
+.live-rec-dot {
+  width: 10px;
+  height: 10px;
+  background: #EF4444;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #EF4444, 0 0 18px #EF4444;
+  animation: hapticDotFlash 0.7s infinite alternate ease-in-out;
+}
+
+@keyframes hapticRingPulse {
+  0% { transform: scale(0.92); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70% { transform: scale(1.18); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+  100% { transform: scale(0.92); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+@keyframes hapticDotFlash {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.45; transform: scale(0.85); }
+}
+
+.live-stream-text {
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  background: linear-gradient(90deg, #F8FAFC 0%, #E2E8F0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.full-width-wrapper {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  background: #0F172A;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dorayaki-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Premium Glassmorphism HUD Overlay (Ultra-Modern UI Card) */
+.stage-topright-stats.premium-hud-card {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 15;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.75) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  padding: 1.2rem 1.6rem;
+  text-align: left;
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(245, 158, 11, 0.28) inset,
+    0 8px 20px rgba(245, 158, 11, 0.12);
+  min-width: 290px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  animation: fadeIn 0.35s ease;
+}
+
+.hud-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.45rem;
+}
+
+.hud-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #10B981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #10B981;
+  animation: hudPulse 1.8s infinite ease-in-out;
+}
+
+@keyframes hudPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.hud-header .stats-label {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #94A3B8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.stats-count-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 0.7rem;
+  width: 100%;
+}
+
+.stats-count-number {
+  font-size: clamp(2.1rem, 3.2vw, 2.7rem);
+  font-weight: 950;
+  background: linear-gradient(135deg, #FFFBEB 0%, #FBBF24 50%, #D97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(245, 158, 11, 0.35));
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.stats-unit-badge {
+  font-size: 0.95rem;
+  font-weight: 850;
+  color: #F8FAFC;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  margin-left: auto;
+  text-align: right;
+}
+
+.hud-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.02) 100%);
+  margin: 0.75rem 0;
+}
+
+.stats-doublings-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.doublings-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.doublings-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #CBD5E1;
+}
+
+.doublings-value {
+  font-size: 1.1rem;
+  font-weight: 850;
+  color: #F8FAFC;
+  font-variant-numeric: tabular-nums;
+}
+
+.doublings-value small {
+  font-size: 0.8rem;
+  color: #FBBF24;
+  margin-left: 2px;
+}
+
+.doublings-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.doublings-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #F59E0B 0%, #EF4444 100%);
+  border-radius: 9999px;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+}
+

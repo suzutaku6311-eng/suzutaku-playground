@@ -3,6 +3,7 @@ import { useParams, NavLink } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 import { games } from '../data/games';
 import { GameCard } from '../components/GameCard';
+import { EggWidget } from '../components/EggWidget';
 import './GamesPage.css';
 
 type FilterType = 'all' | 'japan' | 'science' | 'fun';
@@ -41,6 +42,8 @@ export const GamesPage: React.FC = () => {
           <p>No games found in this category.</p>
         </div>
       )}
+
+      <EggWidget />
     </div>
   );
 };

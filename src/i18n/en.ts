@@ -121,6 +121,50 @@ export const en = {
     title: "Particle Playground",
     subtitle: "Create and watch particle effects."
   },
+  tokyoDistance: {
+    title: "Tokyo Equivalence",
+    subtitle: "How far is that route in Japan from Tokyo Station?",
+    from: "From",
+    to: "To",
+    calculate: "Calculate Route",
+    calculating: "Calculating...",
+    resultMsg: "That's about the distance from...",
+    distance: "Distance",
+    fallbackMsg: "Route not found by land. Showing straight-line distance instead.",
+    error: "Failed to calculate distance. Please try other locations."
+  },
+  britishSarcasm: {
+    title: "British Sarcasm Quiz",
+    subtitle: "Can you decode the hidden truths behind ultra-polite British diplomacy?"
+  },
+  dorayakiBaibain: {
+    title: "Dorayaki Exponential Multiplier",
+    subtitle: "What happens when 1 dorayaki doubles exponentially over time until it engulfs planet Earth and the Universe?"
+  },
+  kitetsuBladeLuck: {
+    title: "Cursed Katana Evasion Simulator",
+    subtitle: ""
+  },
+  flagQuiz: {
+    title: "World Flag Quiz",
+    subtitle: "Guess the country from its flag in this fast-paced world geography quiz!"
+  },
+  elementQuiz: {
+    title: "Chemical Element Symbol Quiz",
+    subtitle: "Test your periodic table knowledge by guessing the element name from its chemical symbol!"
+  },
+  dartsTrip: {
+    title: "Globe Dart Trip World Tour",
+    subtitle: "Throw a dart at the slowly spinning 3D globe to pick your next travel destination! Includes virtual boarding passes and travel guides."
+  },
+  sushiTyping: {
+    title: "Sushi Typing English (Sushi-Da)",
+    subtitle: "Type the English text on the plates scrolling across the conveyor belt before time runs out!"
+  },
+  infiniteRunner: {
+    title: "Infinite Runner: Super Mario Jumper",
+    subtitle: "Run across an endless side-scrolling procedurally generated world! Master double jumps and stomp enemies to set a new personal high score."
+  }
 };
 
 export type TranslationKeys = typeof en;

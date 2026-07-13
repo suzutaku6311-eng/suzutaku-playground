@@ -17,7 +17,7 @@ export const GravitySim: React.FC = () => {
   const { t, language } = useLanguage();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const requestRef = useRef<number>();
+  const requestRef = useRef<number | undefined>(undefined);
   const ballsRef = useRef<Ball[]>([]);
   
   // Settings

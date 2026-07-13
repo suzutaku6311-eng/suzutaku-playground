@@ -51,7 +51,7 @@
 }
 
 .logo {
-  font-size: 1.25rem;
+  font-size: 1.6rem;
   font-weight: 900;
   display: flex;
   align-items: center;
@@ -92,9 +92,9 @@
 }
 
 .lang-btn {
-  padding: 0.25rem 0.75rem;
-  font-size: 0.75rem;
-  font-weight: 700;
+  padding: 0.45rem 1.1rem;
+  font-size: 1.15rem;
+  font-weight: 800;
   border-radius: var(--radius-round);
   transition: all var(--transition-fast);
 }
@@ -188,10 +188,11 @@
   }
   
   .nav-link {
-    font-weight: 700;
-    font-size: 0.95rem;
+    font-weight: 800;
+    font-size: 1.35rem;
     position: relative;
-    padding: 0.25rem 0;
+    padding: 0.25rem 0.5rem;
+    color: var(--text-color);
   }
   
   .nav-link::after {
