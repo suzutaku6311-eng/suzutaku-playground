@@ -50,27 +50,22 @@ export const HomePage: React.FC = () => {
         </div>
         <div className="featured-card" onClick={handlePlayFeatured} style={{ cursor: 'pointer' }}>
           <div className="featured-thumbnail">
-            {/* 大きめのコンビニSVGアート */}
+            {/* 大きめの宇宙スケールSVGアート */}
             <svg viewBox="0 0 400 225" width="100%" height="100%" style={{ maxHeight: '300px' }}>
               <defs>
-                <linearGradient id="featuredGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#E94B3C" />
-                  <stop offset="100%" stopColor="#FF8A7A" />
+                <linearGradient id="featuredUniverseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#0B132B" />
+                  <stop offset="100%" stopColor="#1C2541" />
                 </linearGradient>
               </defs>
-              <rect width="100%" height="100%" fill="url(#featuredGrad)" />
-              {/* おにぎりの影 */}
-              <polygon points="200,60 120,180 280,180" fill="rgba(28, 28, 28, 0.1)" transform="translate(6, 6)" />
-              {/* おにぎり本体 */}
-              <polygon points="200,60 120,180 280,180" fill="#FFFFFF" />
-              {/* のり */}
-              <rect x="175" y="140" width="50" height="40" fill="#1C1C1C" rx="4" />
-              {/* コイン (100) */}
-              <circle cx="290" cy="100" r="24" fill="#D1D5DB" stroke="#9CA3AF" strokeWidth="2.5" />
-              <text x="290" y="107" fill="#4B5563" fontSize="15" fontWeight="900" textAnchor="middle">100</text>
-              {/* コイン (500) */}
-              <circle cx="100" cy="110" r="30" fill="#FBBF24" stroke="#F59E0B" strokeWidth="2.5" />
-              <text x="100" y="118" fill="#78350F" fontSize="18" fontWeight="900" textAnchor="middle">500</text>
+              <rect width="100%" height="100%" fill="url(#featuredUniverseGrad)" />
+              <circle cx="80" cy="50" r="2" fill="#FFFFFF" opacity="0.8" />
+              <circle cx="320" cy="160" r="1.5" fill="#FFFFFF" opacity="0.6" />
+              <circle cx="150" cy="180" r="2.5" fill="#FFFFFF" opacity="0.9" />
+              <circle cx="280" cy="60" r="2" fill="#FFFFFF" opacity="0.5" />
+              <ellipse cx="200" cy="112" rx="50" ry="50" fill="#F4E285" />
+              <ellipse cx="200" cy="112" rx="85" ry="18" fill="none" stroke="#BC986A" strokeWidth="8" transform="rotate(-15 200 112)" opacity="0.9" />
+              <circle cx="200" cy="112" r="95" fill="none" stroke="#38BDF8" strokeWidth="1.5" strokeDasharray="6 12" opacity="0.3" />
             </svg>
             <span className={`badge badge-${featuredGame.category}`} style={{ position: 'absolute', top: '16px', left: '16px', zIndex: 3 }}>
               {t(`nav.${featuredGame.category}`)}

@@ -8,12 +8,7 @@ import { CategoryPage } from './pages/CategoryPage';
 import { AboutPage } from './pages/AboutPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { NotFoundPage } from './pages/NotFoundPage';
-import { KonbiniGame } from './games/konbini1000/KonbiniGame';
 import { UniverseGame } from './games/universeScale/UniverseGame';
-import { InfiniteButton } from './games/infiniteButton/InfiniteButton';
-import { GravitySim } from './games/gravitySim/GravitySim';
-import { ColorMixer } from './games/colorMixer/ColorMixer';
-import { ParticlePlayground } from './games/particlePlayground/ParticlePlayground';
 import { TokyoDistanceGame } from './games/tokyoDistance/TokyoDistanceGame';
 import { BritishSarcasmGame } from './games/britishSarcasm/BritishSarcasmGame';
 import { DorayakiBaibainGame } from './games/dorayakiBaibain/DorayakiBaibainGame';
@@ -61,12 +56,7 @@ const AppContent: React.FC = () => {
           <Route path="/category/:id" element={<CategoryPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
-          <Route path="/games/konbini-1000" element={<KonbiniGame />} />
           <Route path="/games/universe-scale" element={<UniverseGame />} />
-          <Route path="/games/infinite-button" element={<InfiniteButton />} />
-          <Route path="/games/gravity-sim" element={<GravitySim />} />
-          <Route path="/games/color-mixer" element={<ColorMixer />} />
-          <Route path="/games/particle-playground" element={<ParticlePlayground />} />
           <Route path="/games/tokyo-distance" element={<TokyoDistanceGame />} />
           <Route path="/games/british-sarcasm" element={<BritishSarcasmGame />} />
           <Route path="/games/dorayaki-baibain" element={<DorayakiBaibainGame />} />
