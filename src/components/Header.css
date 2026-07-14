@@ -87,14 +87,18 @@
 .lang-switch {
   display: inline-flex;
   background-color: rgba(28, 28, 28, 0.05);
-  padding: 3px;
+  padding: 4px;
   border-radius: var(--radius-round);
+  align-items: center;
 }
 
 .lang-btn {
-  padding: 0.45rem 1.1rem;
-  font-size: 1.15rem;
-  font-weight: 800;
+  padding: 0.35rem 0.85rem;
+  font-size: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
   border-radius: var(--radius-round);
   transition: all var(--transition-fast);
 }
@@ -103,10 +107,12 @@
   background-color: var(--text-color);
   color: var(--bg-color);
   box-shadow: var(--shadow-sm);
+  transform: scale(1.08);
 }
 
 .lang-btn:not(.active):hover {
-  background-color: rgba(28, 28, 28, 0.05);
+  background-color: rgba(28, 28, 28, 0.08);
+  transform: scale(1.04);
 }
 
 /* Mobile Menu Button */
