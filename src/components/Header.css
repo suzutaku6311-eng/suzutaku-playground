@@ -86,33 +86,45 @@
 /* Lang Switch */
 .lang-switch {
   display: inline-flex;
-  background-color: rgba(28, 28, 28, 0.05);
-  padding: 4px;
-  border-radius: var(--radius-round);
   align-items: center;
+  gap: 12px;
 }
 
 .lang-btn {
-  padding: 0.35rem 0.85rem;
-  font-size: 1.35rem;
+  padding: 0;
+  width: 40px;
+  height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  line-height: 1;
-  border-radius: var(--radius-round);
-  transition: all var(--transition-fast);
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lang-btn svg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
 }
 
 .lang-btn.active {
-  background-color: var(--text-color);
-  color: var(--bg-color);
-  box-shadow: var(--shadow-sm);
+  opacity: 1;
   transform: scale(1.08);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.18));
+}
+
+.lang-btn:not(.active) {
+  opacity: 0.38;
+  filter: grayscale(20%);
 }
 
 .lang-btn:not(.active):hover {
-  background-color: rgba(28, 28, 28, 0.08);
-  transform: scale(1.04);
+  opacity: 0.75;
+  transform: scale(1.03);
 }
 
 /* Mobile Menu Button */
