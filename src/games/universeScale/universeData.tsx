@@ -3,9 +3,12 @@ import React from 'react';
 export interface UniverseObject {
   id: string;
   exponent: number; // 10^exponent メートル
-  sizeStr: string;  // わかりやすいサイズ表記 (e.g., "1.7 m", "100 μm")
+  sizeStr: string;  // わかりやすいサイズ表記
   nameEn: string;
   nameJa: string;
+  categoryEn: string;
+  categoryJa: string;
+  themeColor: string;
   descEn: string;
   descJa: string;
   renderSvg: () => React.ReactNode;
@@ -18,14 +21,13 @@ export const universeObjects: UniverseObject[] = [
     sizeStr: "0.1 am (10^-18 m)",
     nameEn: "Quark",
     nameJa: "クォーク",
-    descEn: "One of the fundamental constituents of matter. Extremely tiny, quarks make up protons and neutrons.",
-    descJa: "物質を構成する最も基本的な素粒子の一つ。陽子や中性子を形作っています。",
+    categoryEn: "Subatomic & Quantum Realm",
+    categoryJa: "🔬 素粒子・量子領域",
+    themeColor: "#ec4899",
+    descEn: "One of the fundamental constituents of matter. Extremely tiny, quarks make up protons and neutrons with intense color charges.",
+    descJa: "物質を構成する最も基本的な素粒子の一つ。強い相互作用を持ち、クォークが3つ結合して陽子や中性子を形作っています。",
     renderSvg: () => (
-      <svg viewBox="0 0 100 100" fill="none">
-        <circle cx="50" cy="50" r="12" fill="#E94B3C" opacity="0.8" />
-        <circle cx="50" cy="50" r="4" fill="#FFFFFF" />
-        <circle cx="50" cy="50" r="25" fill="none" stroke="#E94B3C" strokeWidth="2" strokeDasharray="4 4" />
-      </svg>
+      <img src="/universe/quark.png" alt="クォーク" className="universe-photo-img" />
     )
   },
   {
@@ -34,17 +36,13 @@ export const universeObjects: UniverseObject[] = [
     sizeStr: "0.8 fm (10^-15 m)",
     nameEn: "Proton",
     nameJa: "陽子",
-    descEn: "A subatomic particle found in the nucleus of every atom. It is composed of three quarks.",
-    descJa: "あらゆる原子の原子核に含まれる亜原子粒子。3つのクォークで構成されています。",
+    categoryEn: "Subatomic & Quantum Realm",
+    categoryJa: "🔬 素粒子・量子領域",
+    themeColor: "#8b5cf6",
+    descEn: "A subatomic particle found in the nucleus of every atom. It is composed of three quarks bound by gluons.",
+    descJa: "あらゆる原子の原子核に含まれる強い正の電荷を持つ粒子。3つのクォークがグルーオンによって強固に結合されています。",
     renderSvg: () => (
-      <svg viewBox="0 0 100 100" fill="none">
-        <circle cx="50" cy="50" r="20" fill="#008080" />
-        {/* 内包する3つのクォーク表現 */}
-        <circle cx="42" cy="45" r="5" fill="#FFFFFF" />
-        <circle cx="58" cy="42" r="5" fill="#FFFFFF" />
-        <circle cx="50" cy="58" r="5" fill="#FFFFFF" />
-        <text x="50" y="53" fill="#1C1C1C" fontSize="10" fontWeight="900" textAnchor="middle">+</text>
-      </svg>
+      <img src="/universe/proton.png" alt="陽子" className="universe-photo-img" />
     )
   },
   {
@@ -53,37 +51,28 @@ export const universeObjects: UniverseObject[] = [
     sizeStr: "0.1 nm (10^-10 m)",
     nameEn: "Hydrogen Atom",
     nameJa: "水素原子",
-    descEn: "The simplest and most abundant chemical element in the universe, consisting of a single proton and electron.",
-    descJa: "宇宙で最も単純かつ最も豊富に存在する化学元素。1つの陽子と1つの電子から構成されています。",
+    categoryEn: "Subatomic & Quantum Realm",
+    categoryJa: "🔬 素粒子・量子領域",
+    themeColor: "#38bdf8",
+    descEn: "The simplest and most abundant chemical element in the universe, consisting of a single central proton and an electron cloud.",
+    descJa: "宇宙で最も単純かつ最も豊富に存在する化学元素。中心の1つの陽子の周りを、電子が確率の雲（オービタル）として覆っています。",
     renderSvg: () => (
-      <svg viewBox="0 0 100 100" fill="none">
-        {/* 電子軌道 */}
-        <circle cx="50" cy="50" r="35" fill="none" stroke="#8A2BE2" strokeWidth="2" strokeDasharray="3 3" />
-        {/* 原子核 (陽子) */}
-        <circle cx="50" cy="50" r="8" fill="#008080" />
-        {/* 電子 */}
-        <circle cx="85" cy="50" r="4" fill="#8A2BE2" />
-      </svg>
+      <img src="/universe/atom.png" alt="水素原子" className="universe-photo-img" />
     )
   },
   {
     id: "dna",
     exponent: -9,
     sizeStr: "2.5 nm (10^-9 m)",
-    nameEn: "DNA Helix",
+    nameEn: "DNA Double Helix",
     nameJa: "DNA二重らせん",
-    descEn: "The molecule that carries genetic instructions for the development and functioning of all living organisms.",
-    descJa: "すべての生物の成長や機能に関する遺伝情報を担う高分子化合物。",
+    categoryEn: "Microbiology & Molecules",
+    categoryJa: "🧬 分子・細胞・生命領域",
+    themeColor: "#06b6d4",
+    descEn: "The molecule that carries genetic instructions for the development and functioning of all known living organisms.",
+    descJa: "すべての生命の設計図である遺伝情報を記録する究極の生体高分子。アデニン、チミン、グアニン、シトシンの塩基対が美しく螺旋を描きます。",
     renderSvg: () => (
-      <svg viewBox="0 0 100 100" fill="none">
-        {/* 二重らせん */}
-        <path d="M20,30 C40,30 30,70 50,70 C70,70 60,30 80,30" stroke="#E94B3C" strokeWidth="4" strokeLinecap="round" />
-        <path d="M20,70 C40,70 30,30 50,30 C70,30 60,70 80,70" stroke="#008080" strokeWidth="4" strokeLinecap="round" />
-        {/* 結合ハシゴ */}
-        <line x1="35" y1="42" x2="35" y2="58" stroke="#1C1C1C" strokeWidth="2" />
-        <line x1="50" y1="30" x2="50" y2="70" stroke="#1C1C1C" strokeWidth="2" />
-        <line x1="65" y1="42" x2="65" y2="58" stroke="#1C1C1C" strokeWidth="2" />
-      </svg>
+      <img src="/universe/dna.png" alt="DNA二重らせん" className="universe-photo-img" />
     )
   },
   {
@@ -92,78 +81,58 @@ export const universeObjects: UniverseObject[] = [
     sizeStr: "8 μm (10^-6 m)",
     nameEn: "Red Blood Cell",
     nameJa: "赤血球",
-    descEn: "The most common type of blood cell, responsible for delivering oxygen to body tissues.",
-    descJa: "血液中で最も一般的な細胞。体中の組織へ酸素を運ぶ役割を担っています。",
+    categoryEn: "Microbiology & Molecules",
+    categoryJa: "🧬 分子・細胞・生命領域",
+    themeColor: "#f43f5e",
+    descEn: "The most common type of blood cell in vertebrates, delivering oxygen to body tissues via blood flow.",
+    descJa: "脊椎動物の血液中を巡り、全身の細胞へと酸素を届ける重要な血液細胞。効率的にガス交換を行うため独特の円盤状になっています。",
     renderSvg: () => (
-      <svg viewBox="0 0 100 100" fill="none">
-        {/* ドーナツ中央が凹んだ形状 */}
-        <circle cx="50" cy="50" r="35" fill="#EF4444" stroke="#B91C1C" strokeWidth="3" />
-        <circle cx="50" cy="50" r="18" fill="#FCA5A5" stroke="#B91C1C" strokeWidth="2" />
-      </svg>
+      <img src="/universe/redbloodcell.png" alt="赤血球" className="universe-photo-img" />
     )
   },
   {
     id: "hair",
     exponent: -4,
     sizeStr: "100 μm (10^-4 m)",
-    nameEn: "Human Hair (width)",
+    nameEn: "Human Hair Strand",
     nameJa: "髪の毛の太さ",
-    descEn: "A typical human hair diameter. Just barely visible to the naked human eye.",
-    descJa: "一般的な人間の髪の毛の直径。人間の裸眼でかろうじて認識できる細さです。",
+    categoryEn: "Microbiology & Molecules",
+    categoryJa: "🧬 分子・細胞・生命領域",
+    themeColor: "#eab308",
+    descEn: "Roughly the limit of what the naked human eye can see without magnification, coated in microscopicキューティクル scales.",
+    descJa: "肉眼で識別できる限界サイズに近い日常的なスケール。電子顕微鏡で見ると表面は繊細なキューティクルの層で覆われています。",
     renderSvg: () => (
-      <svg viewBox="0 0 100 100" fill="none">
-        <rect x="0" y="0" width="100" height="100" fill="rgba(28,28,28,0.03)" />
-        {/* 巨大な繊維の横断 */}
-        <path d="M0,50 Q25,60 50,50 T100,50" stroke="#1C1C1C" strokeWidth="22" strokeLinecap="round" />
-        <path d="M0,50 Q25,60 50,50 T100,50" stroke="#4B5563" strokeWidth="16" strokeLinecap="round" />
-      </svg>
+      <img src="/universe/hair.png" alt="髪の毛の太さ" className="universe-photo-img" />
     )
   },
   {
     id: "ant",
     exponent: -3,
     sizeStr: "5 mm (10^-3 m)",
-    nameEn: "Ant",
+    nameEn: "Common Ant",
     nameJa: "アリ",
-    descEn: "A common small insect known for its highly structured social colonies.",
-    descJa: "高度な社会組織（コロニー）を作って生活するおなじみの昆虫。",
+    categoryEn: "Everyday Nature",
+    categoryJa: "🌱 日常・生態系スケール",
+    themeColor: "#84cc16",
+    descEn: "A social insect known for astonishing organizational strength and lifting capabilities far exceeding its own body weight.",
+    descJa: "驚異的な社会性と協調性を持つ昆虫。自重の何十倍もの物体を持ち上げる強靭な筋肉と精密な外骨格構造を備えています。",
     renderSvg: () => (
-      <svg viewBox="0 0 100 100" fill="none">
-        {/* 頭・胸・腹 */}
-        <ellipse cx="28" cy="50" rx="8" ry="7" fill="#1C1C1C" />
-        <ellipse cx="45" cy="50" rx="10" ry="6" fill="#1C1C1C" />
-        <ellipse cx="68" cy="50" rx="14" ry="10" fill="#1C1C1C" />
-        {/* 触角 */}
-        <path d="M22,46 Q12,42 16,30" stroke="#1C1C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
-        {/* 脚 */}
-        <path d="M42,50 Q35,68 30,72" stroke="#1C1C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
-        <path d="M45,50 Q45,68 48,72" stroke="#1C1C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
-        <path d="M48,50 Q55,68 62,72" stroke="#1C1C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
-        <path d="M42,50 Q35,32 30,28" stroke="#1C1C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
-        <path d="M45,50 Q45,32 48,28" stroke="#1C1C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
-        <path d="M48,50 Q55,32 62,28" stroke="#1C1C1C" strokeWidth="2" strokeLinecap="round" fill="none" />
-      </svg>
+      <img src="/universe/ant.png" alt="アリ" className="universe-photo-img" />
     )
   },
   {
     id: "human",
     exponent: 0,
     sizeStr: "1.7 m (10^0 m)",
-    nameEn: "Human",
+    nameEn: "Human Being",
     nameJa: "人間",
-    descEn: "The average height of an adult human. A scale we interact with daily.",
-    descJa: "成人男性・女性の平均的な身長。私たちが日常的に捉えているスケールです。",
+    categoryEn: "Everyday Nature",
+    categoryJa: "🌱 日常・生態系スケール",
+    themeColor: "#10b981",
+    descEn: "Our baseline scale in the universe. Composed of approximately 37 trillion cells working in extraordinary harmony.",
+    descJa: "私たちの基準となるスケール。約37兆個もの細胞が完璧な調和をもって躍動し、この広大な宇宙を認識し思考する生命体です。",
     renderSvg: () => (
-      <svg viewBox="0 0 100 100" fill="none">
-        {/* ピクトグラム風人型 */}
-        <circle cx="50" cy="22" r="10" fill="#1C1C1C" />
-        <rect x="38" y="36" width="24" height="34" rx="6" fill="#1C1C1C" />
-        <rect x="40" y="65" width="8" height="25" rx="3" fill="#1C1C1C" />
-        <rect x="52" y="65" width="8" height="25" rx="3" fill="#1C1C1C" />
-        {/* 腕 */}
-        <rect x="28" y="36" width="8" height="25" rx="3" fill="#1C1C1C" />
-        <rect x="64" y="36" width="8" height="25" rx="3" fill="#1C1C1C" />
-      </svg>
+      <img src="/universe/human.png" alt="人間" className="universe-photo-img" />
     )
   },
   {
@@ -172,36 +141,28 @@ export const universeObjects: UniverseObject[] = [
     sizeStr: "3.7 km (10^3 m)",
     nameEn: "Mount Fuji",
     nameJa: "富士山",
-    descEn: "The highest mountain in Japan, standing at 3,776 meters. An iconic active stratovolcano.",
-    descJa: "日本で最も高い山（標高3,776m）。象徴的な美しい円錐形をした活火山です。",
+    categoryEn: "Geological & Planetary",
+    categoryJa: "🏔️ 地球規模・惑星地形",
+    themeColor: "#3b82f6",
+    descEn: "The highest mountain in Japan and a majestic stratovolcano famous worldwide for its exceptionally symmetrical cone.",
+    descJa: "日本最高峰を誇る美しい成層火山。地球の地殻変動とマグマが何十万年もの歳月をかけて造り上げた荘厳な自然の芸術です。",
     renderSvg: () => (
-      <svg viewBox="0 0 100 100" fill="none">
-        {/* 山の形状 */}
-        <polygon points="50,20 10,85 90,85" fill="#1C2541" />
-        {/* 雪化粧 */}
-        <polygon points="50,20 38,45 44,42 50,48 56,42 62,45" fill="#FFFFFF" />
-        {/* 太陽 */}
-        <circle cx="80" cy="35" r="8" fill="#E94B3C" />
-      </svg>
+      <img src="/universe/fuji.png" alt="富士山" className="universe-photo-img" />
     )
   },
   {
     id: "earth",
     exponent: 7,
     sizeStr: "12,740 km (10^7 m)",
-    nameEn: "Earth",
+    nameEn: "Planet Earth",
     nameJa: "地球",
-    descEn: "Our home planet. The only astronomical object known to harbor life.",
-    descJa: "私たちが暮らす惑星。現在生命の存在が確認されている唯一 of 天体です。",
+    categoryEn: "Geological & Planetary",
+    categoryJa: "🌍 惑星・天体領域",
+    themeColor: "#0284c7",
+    descEn: "Our cradle and the only known astronomical object to harbor life, orbiting the Sun at roughly 108,000 km/h.",
+    descJa: "私たちが暮らす生命の揺り籠。豊かな海洋と大気層に守られ、時速約10万8千kmというものすごい速度で太陽の周りを公転しています。",
     renderSvg: () => (
-      <svg viewBox="0 0 100 100" fill="none">
-        <circle cx="50" cy="50" r="38" fill="#3B82F6" stroke="#1C1C1C" strokeWidth="2" />
-        {/* 陸地表現 */}
-        <path d="M35,30 Q45,28 42,40 T30,55 T38,75 Q52,80 50,70 T65,55 T55,30 Z" fill="#10B981" opacity="0.9" />
-        <path d="M68,28 Q75,35 72,42 T62,48 Z" fill="#10B981" opacity="0.9" />
-        {/* 雲 */}
-        <path d="M25,45 Q40,35 60,42 T80,48" stroke="#FFFFFF" strokeWidth="4" strokeLinecap="round" opacity="0.7" />
-      </svg>
+      <img src="/universe/earth.png" alt="地球" className="universe-photo-img" />
     )
   },
   {
@@ -210,38 +171,28 @@ export const universeObjects: UniverseObject[] = [
     sizeStr: "1,390,000 km (10^9 m)",
     nameEn: "The Sun",
     nameJa: "太陽",
-    descEn: "The star at the center of the Solar System. It accounts for 99.8% of the system's total mass.",
-    descJa: "太陽系の中心にある恒星。太陽系全体の質量の99.8%を占めています。",
+    categoryEn: "Stars & Solar Systems",
+    categoryJa: "☀️ 恒星・太陽系領域",
+    themeColor: "#f97316",
+    descEn: "The star at the center of our Solar System. Its immense nuclear fusion core generates all the energy enabling life on Earth.",
+    descJa: "太陽系中心の巨大なG型主系列星。毎秒数億トンの水素をヘリウムに変える核融合反応で、地球上の全生命を支える莫大な光と熱を放ち続けています。",
     renderSvg: () => (
-      <svg viewBox="0 0 100 100" fill="none">
-        {/* コロナ光線 */}
-        <circle cx="50" cy="50" r="42" fill="none" stroke="#FBBF24" strokeWidth="4" strokeDasharray="6 4" />
-        <circle cx="50" cy="50" r="35" fill="#F59E0B" />
-        <circle cx="50" cy="50" r="28" fill="#EF4444" />
-      </svg>
+      <img src="/universe/sun.png" alt="太陽" className="universe-photo-img" />
     )
   },
   {
     id: "solarsystem",
     exponent: 13,
     sizeStr: "15,000,000,000 km (10^13 m)",
-    nameEn: "The Solar System",
+    nameEn: "Solar System",
     nameJa: "太陽系",
-    descEn: "The gravitationally bound system of the Sun and the objects that orbit it.",
-    descJa: "太陽と、その重力によって周囲を公転する天体（惑星・小惑星等）からなる天体システム。",
+    categoryEn: "Stars & Solar Systems",
+    categoryJa: "☀️ 恒星・太陽系領域",
+    themeColor: "#a855f7",
+    descEn: "The gravitationally bound system of the Sun and the objects orbiting it, extending out past Neptune to the Kuiper Belt.",
+    descJa: "太陽の重力によって結びつけられた惑星、衛星、小惑星、彗星が巡る広大な空間。その領域は冥王星の遥か外側の海王星外天体帯にまで及びます。",
     renderSvg: () => (
-      <svg viewBox="0 0 100 100" fill="none">
-        {/* 太陽 */}
-        <circle cx="50" cy="50" r="6" fill="#F59E0B" />
-        {/* 軌道 */}
-        <circle cx="50" cy="50" r="16" fill="none" stroke="#4B5563" strokeWidth="1" opacity="0.5" />
-        <circle cx="50" cy="50" r="26" fill="none" stroke="#4B5563" strokeWidth="1" opacity="0.5" />
-        <circle cx="50" cy="50" r="38" fill="none" stroke="#4B5563" strokeWidth="1" opacity="0.5" />
-        {/* 惑星たち */}
-        <circle cx="66" cy="50" r="3" fill="#D1D5DB" />
-        <circle cx="50" cy="76" r="4.5" fill="#3B82F6" />
-        <circle cx="22" cy="30" r="4" fill="#F59E0B" />
-      </svg>
+      <img src="/universe/solarsystem.png" alt="太陽系" className="universe-photo-img" />
     )
   },
   {
@@ -250,24 +201,13 @@ export const universeObjects: UniverseObject[] = [
     sizeStr: "1,000,000,000,000,000,000 km (10^21 m)",
     nameEn: "Milky Way Galaxy",
     nameJa: "天の川銀河 (銀河系)",
-    descEn: "The barred spiral galaxy that contains our Solar System, consisting of billions of stars.",
-    descJa: "私たちの太陽系が属する棒渦巻銀河。数千億個もの恒星が集まっています。",
+    categoryEn: "Galaxies & Deep Space",
+    categoryJa: "✨ 銀河・大宇宙スケール",
+    themeColor: "#6366f1",
+    descEn: "Our home barred spiral galaxy containing over 200 billion stars, swirling nebulae, and a supermassive black hole at its center.",
+    descJa: "太陽系が属する巨大な棒渦巻銀河。約2,000億～4,000億個もの恒星と星雲が美しく渦を巻いており、中心には巨大ブラックホール（サジタリウスA*）が存在します。",
     renderSvg: () => (
-      <svg viewBox="0 0 100 100" fill="none">
-        {/* 銀河の渦 */}
-        <defs>
-          <radialGradient id="galaxyCenter" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#FFFFFF" />
-            <stop offset="60%" stopColor="#8A2BE2" />
-            <stop offset="100%" stopColor="transparent" />
-          </radialGradient>
-        </defs>
-        <rect x="0" y="0" width="100" height="100" fill="#0B132B" rx="10" />
-        <circle cx="50" cy="50" r="30" fill="url(#galaxyCenter)" />
-        {/* スパイラルアーム */}
-        <path d="M50,50 Q60,35 80,45 Q90,55 75,70 Q60,80 50,50" stroke="#C71585" strokeWidth="3" fill="none" opacity="0.8" />
-        <path d="M50,50 Q40,65 20,55 Q10,45 25,30 Q40,20 50,50" stroke="#38BDF8" strokeWidth="3" fill="none" opacity="0.8" />
-      </svg>
+      <img src="/universe/milkyway.png" alt="天の川銀河" className="universe-photo-img" />
     )
   },
   {
@@ -276,20 +216,13 @@ export const universeObjects: UniverseObject[] = [
     sizeStr: "8.8 × 10^26 m (93 billion light years)",
     nameEn: "Observable Universe",
     nameJa: "観測可能な宇宙",
-    descEn: "The portion of the universe that can be seen from Earth. It contains trillions of galaxies.",
-    descJa: "地球から観測できる全宇宙の領域。ここには数兆個もの銀河が含まれています。",
+    categoryEn: "Galaxies & Deep Space",
+    categoryJa: "✨ 銀河・大宇宙スケール",
+    themeColor: "#d946ef",
+    descEn: "The ultimate cosmic boundary containing at least two trillion galaxies inside a vast, interconnected cosmic web.",
+    descJa: "現在の科学で観測できる極限領域（直径約930億光年）。2兆個以上の銀河とダークマターが網の目状の「宇宙の大規模構造」を形成しています。",
     renderSvg: () => (
-      <svg viewBox="0 0 100 100" fill="none">
-        <rect x="0" y="0" width="100" height="100" fill="#020617" rx="10" />
-        <circle cx="50" cy="50" r="42" fill="none" stroke="#38BDF8" strokeWidth="2" strokeDasharray="3 3" />
-        {/* 無数の光のドット (銀河集団) */}
-        <circle cx="50" cy="50" r="2" fill="#FFFFFF" />
-        <circle cx="35" cy="40" r="1" fill="#8A2BE2" />
-        <circle cx="65" cy="60" r="1.5" fill="#38BDF8" />
-        <circle cx="70" cy="30" r="1" fill="#C71585" />
-        <circle cx="30" cy="70" r="1.2" fill="#FBBF24" />
-        <circle cx="50" cy="25" r="1" fill="#FFFFFF" />
-      </svg>
+      <img src="/universe/observableuniverse.png" alt="観測可能な宇宙" className="universe-photo-img" />
     )
   }
 ];

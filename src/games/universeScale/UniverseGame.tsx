@@ -56,34 +56,68 @@ export const UniverseGame: React.FC = () => {
   // スライダーの進行状況%
   const sliderPercentage = (currentIndex / (universeObjects.length - 1)) * 100;
 
+  // Quick jump presets
+  const quickJumps = [
+    { labelJa: '極小 (10⁻¹⁸m)', labelEn: 'Subatomic', index: 0 },
+    { labelJa: '生命 (DNA)', labelEn: 'Molecules', index: 3 },
+    { labelJa: '人間 (10⁰m)', labelEn: 'Human', index: 7 },
+    { labelJa: '地球 (惑星)', labelEn: 'Planet', index: 9 },
+    { labelJa: '極大 (大宇宙)', labelEn: 'Cosmic', index: 13 }
+  ];
+
   return (
-    <div className="container universe-game-container ">
+    <div 
+      className="container universe-game-container"
+      style={{
+        background: `radial-gradient(circle at 50% 25%, ${activeObject.themeColor}18 0%, rgba(5,8,16,0) 65%)`
+      }}
+    >
       <div className="universe-header">
         <h1 className="page-title">{language === 'ja' ? '宇宙のスケール' : 'Scale of the Universe'}</h1>
       </div>
 
-      {/* Main Viewer Area */}
-      <div className="universe-viewer">
+      {/* Main Cinematic Viewer Area */}
+      <div className="universe-viewer" style={{ borderColor: `${activeObject.themeColor}44` }}>
+        <div className="universe-category-badge" style={{ borderColor: `${activeObject.themeColor}88`, color: activeObject.themeColor }}>
+          {language === 'ja' ? activeObject.categoryJa : activeObject.categoryEn}
+        </div>
+
         <AnimatePresence mode="wait">
           <motion.div
             key={activeObject.id}
             className="universe-svg-container"
-            initial={{ scale: 0.6, opacity: 0 }}
+            initial={{ scale: 0.7, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 1.4, opacity: 0 }}
-            transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+            exit={{ scale: 1.25, opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
             {activeObject.renderSvg()}
           </motion.div>
         </AnimatePresence>
 
-        <div className="scale-label-overlay">
+        <div className="scale-label-overlay" style={{ borderColor: `${activeObject.themeColor}66` }}>
           10<sup>{activeObject.exponent}</sup> m
         </div>
       </div>
 
-      {/* Control Slider */}
-      <div className="universe-controls">
+      {/* Control Slider & Sci-fi Deck */}
+      <div className="universe-controls" style={{ borderColor: `${activeObject.themeColor}33` }}>
+        <div className="quick-jump-row">
+          <span className="quick-jump-title">⚡ {language === 'ja' ? '瞬間スケールジャンプ:' : 'Quick Jump:'}</span>
+          <div className="quick-jump-chips">
+            {quickJumps.map((qj) => (
+              <button
+                key={qj.index}
+                className={`quick-jump-chip ${currentIndex === qj.index ? 'active' : ''}`}
+                onClick={() => updateIndex(qj.index)}
+                style={currentIndex === qj.index ? { background: activeObject.themeColor, borderColor: activeObject.themeColor } : {}}
+              >
+                {language === 'ja' ? qj.labelJa : qj.labelEn}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="slider-wrapper">
           <div className="slider-header">
             <button 
@@ -91,6 +125,7 @@ export const UniverseGame: React.FC = () => {
               onClick={stepDown} 
               disabled={currentIndex === 0}
               aria-label="Zoom In"
+              title="縮小ズーム (-)"
             >
               -
             </button>
@@ -99,6 +134,7 @@ export const UniverseGame: React.FC = () => {
               onClick={stepUp} 
               disabled={currentIndex === universeObjects.length - 1}
               aria-label="Zoom Out"
+              title="拡大ズーム (+)"
             >
               +
             </button>
@@ -112,7 +148,7 @@ export const UniverseGame: React.FC = () => {
             onChange={handleSliderChange}
             className="universe-slider"
             style={{
-              background: `linear-gradient(to right, var(--accent-science) 0%, var(--accent-science) ${sliderPercentage}%, var(--card-border) ${sliderPercentage}%, var(--card-border) 100%)`
+              background: `linear-gradient(to right, ${activeObject.themeColor} 0%, ${activeObject.themeColor} ${sliderPercentage}%, rgba(255,255,255,0.12) ${sliderPercentage}%, rgba(255,255,255,0.12) 100%)`
             }}
             aria-label="Scale level slider"
           />
@@ -125,13 +161,15 @@ export const UniverseGame: React.FC = () => {
         </div>
       </div>
 
-      {/* Object Details */}
-      <div className="object-details-card">
-        <div className="details-header">
+      {/* Object Rich Details Card */}
+      <div className="object-details-card" style={{ borderColor: `${activeObject.themeColor}33` }}>
+        <div className="details-header" style={{ borderBottomColor: activeObject.themeColor }}>
           <h2 className="details-title">
             {language === 'ja' ? activeObject.nameJa : activeObject.nameEn}
           </h2>
-          <span className="details-size">{renderFormattedSize(activeObject.sizeStr)}</span>
+          <span className="details-size" style={{ color: activeObject.themeColor }}>
+            {renderFormattedSize(activeObject.sizeStr)}
+          </span>
         </div>
         <p className="details-desc">
           {language === 'ja' ? activeObject.descJa : activeObject.descEn}
