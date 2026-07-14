@@ -1,13 +1,27 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { track } from '@vercel/analytics';
 import { useLanguage } from '../../i18n/LanguageContext';
 import { universeObjects } from './universeData';
 import './universe.css';
 
+const renderFormattedSize = (str: string) => {
+  const parts = str.split(/(10\^[0-9-]+)/g);
+  return parts.map((part, index) => {
+    const match = part.match(/10\^([0-9-]+)/);
+    if (match) {
+      return (
+        <React.Fragment key={index}>
+          10<sup>{match[1]}</sup>
+        </React.Fragment>
+      );
+    }
+    return part;
+  });
+};
+
 export const UniverseGame: React.FC = () => {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState<number>(7); // 初期位置は人間 (index: 7, 10^0 m)
 
   const activeObject = universeObjects[currentIndex];
@@ -45,13 +59,6 @@ export const UniverseGame: React.FC = () => {
   return (
     <div className="container universe-game-container ">
       <div className="universe-header">
-        <Link to="/" className="back-btn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12" />
-            <polyline points="12 19 5 12 12 5" />
-          </svg>
-          {t('konbini.back')}
-        </Link>
         <h1 className="page-title">{language === 'ja' ? '宇宙のスケール' : 'Scale of the Universe'}</h1>
       </div>
 
@@ -87,7 +94,6 @@ export const UniverseGame: React.FC = () => {
             >
               -
             </button>
-            <span>{language === 'ja' ? 'スライダーを動かしてズーム' : 'Drag to zoom'}</span>
             <button 
               className="qty-btn" 
               onClick={stepUp} 
@@ -112,9 +118,9 @@ export const UniverseGame: React.FC = () => {
           />
 
           <div className="slider-labels-helper">
-            <span>{language === 'ja' ? '極小 (10^-18m)' : 'Micro (10^-18m)'}</span>
+            <span>{language === 'ja' ? <>極小 (10<sup>-18</sup>m)</> : <>Micro (10<sup>-18</sup>m)</>}</span>
             <span>10<sup>0</sup>m</span>
-            <span>{language === 'ja' ? '極大 (10^26m)' : 'Macro (10^26m)'}</span>
+            <span>{language === 'ja' ? <>極大 (10<sup>26</sup>m)</> : <>Macro (10<sup>26</sup>m)</>}</span>
           </div>
         </div>
       </div>
@@ -125,7 +131,7 @@ export const UniverseGame: React.FC = () => {
           <h2 className="details-title">
             {language === 'ja' ? activeObject.nameJa : activeObject.nameEn}
           </h2>
-          <span className="details-size">{activeObject.sizeStr}</span>
+          <span className="details-size">{renderFormattedSize(activeObject.sizeStr)}</span>
         </div>
         <p className="details-desc">
           {language === 'ja' ? activeObject.descJa : activeObject.descEn}
