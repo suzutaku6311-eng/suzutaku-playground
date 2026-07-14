@@ -34,34 +34,37 @@ export const EggWidget: React.FC = () => {
         <div
           className={`egg-container egg-${stage}`}
           onClick={handleClick}
-          title={stage === 'idle' ? 'なんか聞こえる…？タップしてみて！' : 'もう一回タップ！'}
         >
-          {/* Crack lines overlay when cracking */}
-          {stage === 'cracking' && (
-            <svg className="egg-cracks" viewBox="0 0 80 96" width="86" height="120">
-              <path d="M43 20 L38 38 L48 45 L38 65" stroke="#FFFFFF" strokeWidth="3" fill="none" strokeLinecap="round" />
-              <path d="M30 35 L25 48 L35 52" stroke="#FFFFFF" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-              <path d="M55 30 L60 45 L50 54" stroke="#FFFFFF" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-            </svg>
+          {/* Realistic intricate crack overlay on shaking and cracking */}
+          {stage === 'shaking' && (
+            <img
+              src="/rabbit_egg_cracks.png"
+              alt=""
+              className="egg-cracks cracks-subtle"
+            />
           )}
 
-          {/* New transparent PNG Egg Image */}
+          {stage === 'cracking' && (
+            <img
+              src="/rabbit_egg_cracks.png"
+              alt=""
+              className="egg-cracks cracks-heavy"
+            />
+          )}
+
+          {/* Main transparent PNG Egg Image */}
           <img
             src="/rabbit_egg.png"
-            alt="不思議な卵"
+            alt="不思議な青い卵"
             className="egg-image"
           />
-          
-          <div className="egg-hint">
-            {stage === 'idle' ? 'タップしてみてね 🥚' : stage === 'shaking' ? '揺れている…もう一回！' : 'もう少しで生まれそう！'}
-          </div>
         </div>
       )}
 
-      {/* Hatched Rabbit Scene */}
+      {/* Hatched Rabbit Scene (Click anywhere on scene to reset to egg) */}
       {stage === 'hatched' && (
-        <div className="hatch-scene">
-          {/* Shell halves (cutout left & right PNGs) */}
+        <div className="hatch-scene" onClick={handleReset}>
+          {/* Realistic split shell halves */}
           <img src="/rabbit_egg_left.png" alt="割れた卵左" className="shell-left shell-half-img" />
           <img src="/rabbit_egg_right.png" alt="割れた卵右" className="shell-right shell-half-img" />
 
@@ -113,11 +116,6 @@ export const EggWidget: React.FC = () => {
               <span className="rb-star rb-star-4">🌸</span>
               <span className="rb-star rb-star-5">⭐</span>
             </div>
-
-            <p className="rabbit-msg">うさぎが生まれたよ！🐰</p>
-            <button className="rabbit-reset-btn" onClick={handleReset}>
-              もう一回卵を戻す 🔄
-            </button>
           </div>
         </div>
       )}
