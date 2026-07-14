@@ -1,6 +1,5 @@
 import React from 'react';
 import { useParams, NavLink } from 'react-router-dom';
-import { useLanguage } from '../i18n/LanguageContext';
 import { games } from '../data/games';
 import { GameCard } from '../components/GameCard';
 import { EggWidget } from '../components/EggWidget';
@@ -9,7 +8,6 @@ import './GamesPage.css';
 type FilterType = 'all' | 'japan' | 'science' | 'fun';
 
 export const GamesPage: React.FC = () => {
-  const { t } = useLanguage();
   const { category } = useParams<{ category?: FilterType }>();
   const activeFilter = category ?? 'all';
 
@@ -20,15 +18,14 @@ export const GamesPage: React.FC = () => {
 
   return (
     <div className="container games-page animate-fade-in">
-        <div className="page-header">
-          <h1 className="page-title">{t('nav.games')}</h1>
-          <nav className="sub-nav">
-            <NavLink to="/games" className={({ isActive }) => `sub-link ${isActive ? 'active' : ''}`}>All</NavLink>
-            <NavLink to="/games/japan" className={({ isActive }) => `sub-link ${isActive ? 'active' : ''}`}>Japan</NavLink>
-            <NavLink to="/games/science" className={({ isActive }) => `sub-link ${isActive ? 'active' : ''}`}>Science</NavLink>
-            <NavLink to="/games/fun" className={({ isActive }) => `sub-link ${isActive ? 'active' : ''}`}>Fun</NavLink>
-          </nav>
-        </div>
+      <div className="page-header">
+        <nav className="sub-nav">
+          <NavLink to="/games" className={({ isActive }) => `sub-link ${isActive ? 'active' : ''}`}>All</NavLink>
+          <NavLink to="/games/japan" className={({ isActive }) => `sub-link ${isActive ? 'active' : ''}`}>Japan</NavLink>
+          <NavLink to="/games/science" className={({ isActive }) => `sub-link ${isActive ? 'active' : ''}`}>Science</NavLink>
+          <NavLink to="/games/fun" className={({ isActive }) => `sub-link ${isActive ? 'active' : ''}`}>Fun</NavLink>
+        </nav>
+      </div>
 
       {/* Games Grid */}
       {filteredGames.length > 0 ? (

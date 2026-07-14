@@ -40,9 +40,9 @@ export const Header: React.FC = () => {
               className={`lang-btn ${language === 'en' ? 'active' : ''}`}
               onClick={() => setLanguage('en')}
               aria-label="Switch to English"
-              title="English"
+              title="English (UK/US)"
             >
-              🇺🇸
+              🇬🇧
             </button>
             <button 
               className={`lang-btn ${language === 'ja' ? 'active' : ''}`}
