@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { track } from '@vercel/analytics';
 import { useLanguage } from '../../i18n/LanguageContext';
 import { products } from './products';
@@ -239,13 +238,6 @@ export const KonbiniGame: React.FC = () => {
   return (
     <div className="container konbini-game-container animate-fade-in">
       <div className="konbini-header">
-        <Link to="/" className="back-btn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12" />
-            <polyline points="12 19 5 12 12 5" />
-          </svg>
-          {t('konbini.back')}
-        </Link>
         <h1 className="page-title">{t('konbini.title')}</h1>
       </div>
 

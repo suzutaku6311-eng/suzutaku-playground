@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { track } from '@vercel/analytics';
 import { useLanguage } from '../../i18n/LanguageContext';
@@ -172,15 +171,10 @@ export const InfiniteButton: React.FC = () => {
 
   return (
     <div className="container button-game-container ">
-      <div className="universe-header">
-        <Link to="/" className="back-btn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12" />
-            <polyline points="12 19 5 12 12 5" />
-          </svg>
-          {t('konbini.back')}
-        </Link>
-        <h1 className="page-title">{language === 'ja' ? '無限ボタン' : 'Infinite Button'}</h1>
+      <div className="universe-header" style={{ justifyContent: 'center', textAlign: 'center' }}>
+        <h1 className="page-title" style={{ color: 'var(--text-color)', fontWeight: 900, fontSize: '2.3rem', margin: '0.5rem auto 1.5rem auto' }}>
+          {language === 'ja' ? '無限ボタン' : 'Infinite Button'}
+        </h1>
       </div>
 
       {!isFinished ? (

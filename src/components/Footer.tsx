@@ -48,7 +48,6 @@ export const Footer: React.FC = () => {
             </a>
           </div>
           <div>&copy; {currentYear} Suzutaku Playground.</div>
-          <div style={{ marginTop: '4px', fontSize: '0.7rem' }}>{t('home.aboutDesc')}</div>
         </div>
       </div>
     </footer>

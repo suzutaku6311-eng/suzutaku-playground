@@ -46,8 +46,8 @@ const AppContent: React.FC = () => {
       {gameMode ? (
         <div className="neal-game-topbar">
           <Link to="/games" className="neal-game-logo-pill" title="Return to Suzutaku Playground">
-            <span className="neal-logo-icon">🕹️</span>
-            <span className="neal-logo-text">Suzutaku Playground</span>
+            Suzutaku Playground
+            <span className="logo-dot"></span>
           </Link>
         </div>
       ) : (

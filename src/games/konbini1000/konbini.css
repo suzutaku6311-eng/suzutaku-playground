@@ -4,24 +4,18 @@
 
 .konbini-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-bottom: var(--spacing-lg);
-  flex-wrap: wrap;
-  gap: var(--spacing-md);
+  margin: 0.5rem 0 1.5rem 0;
+  text-align: center;
 }
 
-.back-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  font-weight: 700;
-  color: var(--text-muted);
-  transition: color var(--transition-fast);
-}
-
-.back-btn:hover {
-  color: var(--accent-color);
+.konbini-header .page-title {
+  color: var(--text-color);
+  font-weight: 900;
+  font-size: 2.3rem;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Dashboard */
