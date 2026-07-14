@@ -22,53 +22,48 @@ export const EggWidget: React.FC = () => {
     }
   };
 
+  const handleReset = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setStage('idle');
+    setClickCount(0);
+  };
+
   return (
     <div className="egg-widget-area">
       {stage !== 'hatched' && (
         <div
           className={`egg-container egg-${stage}`}
           onClick={handleClick}
-          title={stage === 'idle' ? 'なんか聞こえる…？' : 'もう一回！'}
+          title={stage === 'idle' ? 'なんか聞こえる…？タップしてみて！' : 'もう一回タップ！'}
         >
-          {/* Crack lines */}
-          {(stage === 'cracking') && (
-            <svg className="egg-cracks" viewBox="0 0 80 96" width="80" height="96">
-              <path d="M40 20 L35 35 L45 40 L38 55" stroke="#8B6914" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-              <path d="M30 30 L25 42 L33 45" stroke="#8B6914" strokeWidth="2" fill="none" strokeLinecap="round" />
-              <path d="M50 25 L55 38 L48 44" stroke="#8B6914" strokeWidth="2" fill="none" strokeLinecap="round" />
+          {/* Crack lines overlay when cracking */}
+          {stage === 'cracking' && (
+            <svg className="egg-cracks" viewBox="0 0 80 96" width="86" height="120">
+              <path d="M43 20 L38 38 L48 45 L38 65" stroke="#FFFFFF" strokeWidth="3" fill="none" strokeLinecap="round" />
+              <path d="M30 35 L25 48 L35 52" stroke="#FFFFFF" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+              <path d="M55 30 L60 45 L50 54" stroke="#FFFFFF" strokeWidth="2.5" fill="none" strokeLinecap="round" />
             </svg>
           )}
 
-          {/* Egg SVG */}
-          <svg viewBox="0 0 80 96" width="80" height="96" className="egg-svg">
-            <defs>
-              <radialGradient id="eggGrad" cx="38%" cy="35%" r="60%">
-                <stop offset="0%" stopColor="#FFF9E6" />
-                <stop offset="60%" stopColor="#FDE8A0" />
-                <stop offset="100%" stopColor="#F0C040" />
-              </radialGradient>
-            </defs>
-            <ellipse cx="40" cy="54" rx="30" ry="36" fill="url(#eggGrad)" />
-            <ellipse cx="40" cy="40" rx="22" ry="28" fill="url(#eggGrad)" />
-            <ellipse cx="30" cy="30" rx="7" ry="10" fill="rgba(255,255,255,0.45)" transform="rotate(-15 30 30)" />
-            <circle cx="28" cy="58" r="4" fill="rgba(255,150,180,0.5)" />
-            <circle cx="52" cy="65" r="3" fill="rgba(150,220,255,0.5)" />
-            <circle cx="42" cy="50" r="3.5" fill="rgba(200,255,150,0.5)" />
-          </svg>
+          {/* New transparent PNG Egg Image */}
+          <img
+            src="/rabbit_egg.png"
+            alt="不思議な卵"
+            className="egg-image"
+          />
+          
+          <div className="egg-hint">
+            {stage === 'idle' ? 'タップしてみてね 🥚' : stage === 'shaking' ? '揺れている…もう一回！' : 'もう少しで生まれそう！'}
+          </div>
         </div>
       )}
 
-      {/* Hatched Rabbit */}
+      {/* Hatched Rabbit Scene */}
       {stage === 'hatched' && (
         <div className="hatch-scene">
-          {/* Shell halves */}
-          <svg className="shell-left" viewBox="0 0 50 60" width="50" height="60">
-            <path d="M25 0 Q0 10 0 40 L25 40 Z" fill="#F0C040" />
-            <path d="M25 0 Q8 8 6 35 L22 38 Z" fill="#FFF0A0" opacity="0.6" />
-          </svg>
-          <svg className="shell-right" viewBox="0 0 50 60" width="50" height="60">
-            <path d="M25 0 Q50 10 50 40 L25 40 Z" fill="#F0C040" />
-          </svg>
+          {/* Shell halves (cutout left & right PNGs) */}
+          <img src="/rabbit_egg_left.png" alt="割れた卵左" className="shell-left shell-half-img" />
+          <img src="/rabbit_egg_right.png" alt="割れた卵右" className="shell-right shell-half-img" />
 
           {/* Rabbit */}
           <div className="rabbit-born">
@@ -120,6 +115,9 @@ export const EggWidget: React.FC = () => {
             </div>
 
             <p className="rabbit-msg">うさぎが生まれたよ！🐰</p>
+            <button className="rabbit-reset-btn" onClick={handleReset}>
+              もう一回卵を戻す 🔄
+            </button>
           </div>
         </div>
       )}
